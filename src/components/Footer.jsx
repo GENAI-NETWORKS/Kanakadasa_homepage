@@ -35,7 +35,7 @@ export default function Footer() {
     <footer className="bg-primary pt-16 pb-8 border-t-4 border-accent">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
-          
+
           {/* Col 1: Brand */}
           <div>
             <div className="flex items-center gap-3 mb-6">
@@ -52,25 +52,25 @@ export default function Footer() {
               </div>
             </div>
             <p className="text-white/80 text-sm leading-relaxed mb-6">
-              Shaping Minds. Building Futures. A premier CBSE & Matriculation school nurturing students from Pre-KG to Class XII.
+              Shaping Minds. Building Futures. A premier CBSE &amp; Matriculation school nurturing students from Pre-KG to Class XII.
             </p>
             <div className="flex gap-4">
-              <a href="#" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-accent hover:text-primary transition-colors">
+              <a href="#" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-accent hover:text-white transition-colors">
                 <FacebookIcon size={20} />
               </a>
-              <a href="#" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-accent hover:text-primary transition-colors">
+              <a href="#" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-accent hover:text-white transition-colors">
                 <InstagramIcon size={20} />
               </a>
-              <a href="#" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-accent hover:text-primary transition-colors">
+              <a href="#" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-accent hover:text-white transition-colors">
                 <TwitterIcon size={20} />
               </a>
-              <a href="#" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-accent hover:text-primary transition-colors">
+              <a href="#" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-accent hover:text-white transition-colors">
                 <YoutubeIcon size={20} />
               </a>
             </div>
           </div>
 
-          {/* Col 2: Quick Links */}
+          {/* Col 2: Quick Links — DISABLED (text preserved, no navigation) */}
           <div>
             <h4 className="font-bold text-white text-lg mb-6 relative inline-block">
               Quick Links
@@ -90,13 +90,13 @@ export default function Footer() {
                 { name: 'Contact Us', path: '/contact' },
               ].map((item) => (
                 <li key={item.name}>
-                  <Link 
-                    to={item.path}
-                    onClick={() => window.scrollTo(0, 0)}
-                    className="text-white/80 hover:text-accent transition-colors text-sm text-left w-full flex items-center gap-2 before:content-['›'] before:text-accent"
+                  {/* DISABLED — span replaces Link, content preserved */}
+                  <span
+                    title="Navigation coming soon"
+                    className="text-white/50 text-sm text-left w-full flex items-center gap-2 before:content-['›'] before:text-accent/40 cursor-not-allowed select-none"
                   >
                     {item.name}
-                  </Link>
+                  </span>
                 </li>
               ))}
             </ul>

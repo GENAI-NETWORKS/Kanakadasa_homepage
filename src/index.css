@@ -3,12 +3,14 @@
 @tailwind utilities;
 
 :root {
-  --primary: #1B3A6B;
-  --accent: #F5A623;
-  --secondary: #2E8B57;
-  --light-bg: #F8F9FC;
-  --text-dark: #1A1A2E;
-  --text-muted: #5A6278;
+  --primary:       #1A472A;   /* deep forest green */
+  --accent:        #E63946;   /* vivid crimson red */
+  --secondary:     #F4A261;   /* warm amber */
+  --light-bg:      #FFF8F0;   /* warm cream */
+  --text-dark:     #1C1C1E;
+  --text-muted:    #6B6B6B;
+  --primary-light: #2D6A4F;
+  --primary-dark:  #0D2818;
 }
 
 @layer base {
@@ -24,9 +26,7 @@
     -moz-osx-font-smoothing: grayscale;
   }
 
-  h1,
-  h2,
-  h3 {
+  h1, h2, h3 {
     font-family: "DM Sans", sans-serif;
   }
 }
@@ -41,7 +41,7 @@
   }
 
   .btn-primary {
-    @apply inline-flex items-center gap-2 bg-accent text-white font-semibold px-6 py-3 rounded-lg hover:brightness-110 text-white transition-all duration-300 shadow-md hover:shadow-lg hover:-translate-y-0.5;
+    @apply inline-flex items-center gap-2 bg-accent text-white font-semibold px-6 py-3 rounded-lg hover:brightness-110 transition-all duration-300 shadow-md hover:shadow-lg hover:-translate-y-0.5;
   }
 
   .btn-outline {
@@ -49,7 +49,7 @@
   }
 
   .btn-navy {
-    @apply inline-flex items-center gap-2 bg-primary text-white font-semibold px-6 py-3 rounded-lg hover:bg-blue-900 transition-all duration-300 shadow-md hover:shadow-lg;
+    @apply inline-flex items-center gap-2 bg-primary text-white font-semibold px-6 py-3 rounded-lg hover:bg-primary-dark transition-all duration-300 shadow-md hover:shadow-lg;
   }
 
   .card-hover {
@@ -57,7 +57,48 @@
   }
 
   .facility-icon-wrap {
-    @apply flex flex-col items-center gap-3 p-6 rounded-xl bg-white/10 hover:bg-white/20 transition-all duration-300 text-center cursor-default;
+    @apply flex flex-col items-center gap-3 p-6 rounded-xl bg-white/10 hover:bg-white/20 transition-all duration-300 text-center cursor-default backdrop-blur-sm;
+  }
+
+  /* ── Disabled nav links ─────────────────────────── */
+  .nav-disabled {
+    @apply cursor-not-allowed opacity-70 select-none pointer-events-none;
+  }
+
+  /* ── Pattern: dots ──────────────────────────────── */
+  .pattern-dots {
+    background-image: radial-gradient(circle, #1A472A22 1px, transparent 1px);
+    background-size: 24px 24px;
+  }
+
+  /* ── Pattern: diagonal stripes ──────────────────── */
+  .pattern-stripes {
+    background-image: repeating-linear-gradient(
+      -45deg,
+      transparent,
+      transparent 8px,
+      rgba(26,71,42,0.04) 8px,
+      rgba(26,71,42,0.04) 16px
+    );
+  }
+
+  /* ── Pattern: grid ──────────────────────────────── */
+  .pattern-grid {
+    background-image:
+      linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+
+  /* ── Wave divider SVG inline ─────────────────────── */
+  .wave-top::before {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 60px;
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 60'%3E%3Cpath fill='%23FFF8F0' fill-opacity='1' d='M0,30L60,25C120,20,240,10,360,15C480,20,600,40,720,45C840,50,960,40,1080,30C1200,20,1320,10,1380,5L1440,0L1440,0L1380,0C1320,0,1200,0,1080,0C960,0,840,0,720,0C600,0,480,0,360,0C240,0,120,0,60,0L0,0Z'/%3E%3C/svg%3E") no-repeat top center;
+    background-size: cover;
+    margin-top: -1px;
   }
 }
 
@@ -68,19 +109,49 @@
   }
 
   .text-gradient {
-    background: linear-gradient(135deg, #F5A623 0%, #f7c466 100%);
+    background: linear-gradient(135deg, #E63946 0%, #F4A261 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
+
+  .text-gradient-green {
+    background: linear-gradient(135deg, #1A472A 0%, #2D6A4F 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .hide-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .hide-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
 }
 
-/* Scrollbar styling (Hidden) */
-::-webkit-scrollbar {
-  display: none;
-}
-
+/* Scrollbar (hidden globally) */
+::-webkit-scrollbar { display: none; }
 html, body {
-  -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;  /* Firefox */
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Marquee animation */
+@keyframes marquee {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+@keyframes marquee2 {
+  0%   { transform: translateX(100%); }
+  100% { transform: translateX(0); }
+}
+
+/* Diagonal clip for AboutSnapshot */
+.clip-diagonal-right {
+  clip-path: polygon(8% 0%, 100% 0%, 100% 100%, 0% 100%);
+}
+.clip-diagonal-left {
+  clip-path: polygon(0% 0%, 92% 0%, 100% 100%, 0% 100%);
 }
