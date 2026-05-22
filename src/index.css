@@ -1,0 +1,86 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary: #1B3A6B;
+  --accent: #F5A623;
+  --secondary: #2E8B57;
+  --light-bg: #F8F9FC;
+  --text-dark: #1A1A2E;
+  --text-muted: #5A6278;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: "DM Sans", sans-serif;
+    color: var(--text-dark);
+    background-color: #ffffff;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1,
+  h2,
+  h3 {
+    font-family: "DM Sans", sans-serif;
+  }
+}
+
+@layer components {
+  .section-label {
+    @apply text-xs font-semibold uppercase tracking-widest text-accent mb-3 block;
+  }
+
+  .section-heading {
+    @apply font-heading text-3xl md:text-4xl font-bold text-primary leading-tight;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center gap-2 bg-accent text-white font-semibold px-6 py-3 rounded-lg hover:brightness-110 text-white transition-all duration-300 shadow-md hover:shadow-lg hover:-translate-y-0.5;
+  }
+
+  .btn-outline {
+    @apply inline-flex items-center gap-2 border-2 border-white text-white font-semibold px-6 py-3 rounded-lg hover:bg-white hover:text-primary transition-all duration-300;
+  }
+
+  .btn-navy {
+    @apply inline-flex items-center gap-2 bg-primary text-white font-semibold px-6 py-3 rounded-lg hover:bg-blue-900 transition-all duration-300 shadow-md hover:shadow-lg;
+  }
+
+  .card-hover {
+    @apply hover:shadow-xl hover:-translate-y-1 transition-all duration-300;
+  }
+
+  .facility-icon-wrap {
+    @apply flex flex-col items-center gap-3 p-6 rounded-xl bg-white/10 hover:bg-white/20 transition-all duration-300 text-center cursor-default;
+  }
+}
+
+@layer utilities {
+  .marquee-container {
+    overflow: hidden;
+    white-space: nowrap;
+  }
+
+  .text-gradient {
+    background: linear-gradient(135deg, #F5A623 0%, #f7c466 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+}
+
+/* Scrollbar styling (Hidden) */
+::-webkit-scrollbar {
+  display: none;
+}
+
+html, body {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
