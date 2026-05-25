@@ -3,17 +3,19 @@ import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 
 const navLinks = [
-  { label: "Home", href: "/" },
-  { label: "About", href: "/about" },
-  { label: "Academic", href: "/academic" },
-  { label: "Facility", href: "/facility" },
+  { label: "Home",       href: "/" },
+  { label: "About",      href: "/about" },
+  { label: "Academic",   href: "/academic" },
+  { label: "Facility",   href: "/facility" },
   { label: "Curriculum", href: "/curriculum" },
-  { label: "Admission", href: "/admission" },
-  { label: "Parents", href: "/parents" },
-  { label: "Gallery", href: "/gallery" },
-  { label: "Careers", href: "/careers" },
+  { label: "Admission",  href: "/admission" },
+  { label: "Parents",    href: "/parents" },
+  { label: "Gallery",    href: "/gallery" },
+  { label: "Careers",    href: "/careers" },
   { label: "Contact Us", href: "/contact" },
 ];
+
+const TICKER_H = 36; // px — matches AnnouncementTicker height
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -23,88 +25,104 @@ export default function Navbar() {
   const isHomePage = location.pathname === "/";
 
   useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 60);
-    };
+    const handleScroll = () => setScrolled(window.scrollY > 60);
     window.addEventListener("scroll", handleScroll, { passive: true });
     handleScroll();
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  useEffect(() => {
-    setMenuOpen(false);
-  }, [location.pathname]);
+  useEffect(() => { setMenuOpen(false); }, [location.pathname]);
 
   const isSolidNav = !isHomePage || scrolled;
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isSolidNav
-          ? "bg-white shadow-lg"
-          : "bg-transparent"
+      className={`fixed left-0 right-0 z-50 transition-all duration-300 ${
+        isSolidNav ? "bg-white shadow-lg" : "bg-transparent"
       }`}
+      style={{ top: `${TICKER_H}px` }}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 md:h-20">
-          {/* Logo — stays active */}
+
+          {/* Logo */}
           <Link
             to="/"
             onClick={() => window.scrollTo(0, 0)}
             className="flex items-center gap-3 flex-shrink-0"
           >
-            <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-primary flex items-center justify-center shadow-md">
-              <span className="text-white font-heading font-bold text-sm md:text-base leading-none">SKS</span>
+            <div
+              className="w-10 h-10 md:w-12 md:h-12 rounded-full flex items-center justify-center shadow-md"
+              style={{ background: "#1A237E" }}
+            >
+              <span className="text-white font-heading font-bold text-sm md:text-base leading-none">
+                SKS
+              </span>
             </div>
             <div className="hidden sm:block text-left">
-              <p className={`font-heading font-bold text-sm md:text-base leading-tight transition-colors duration-300 ${isSolidNav ? "text-primary" : "text-white"}`}>
+              <p
+                className={`font-heading font-bold text-sm md:text-base leading-tight transition-colors duration-300 ${
+                  isSolidNav ? "text-[#1A237E]" : "text-white"
+                }`}
+              >
                 St. Kanakadasa
               </p>
-              <p className={`text-xs font-medium tracking-wide transition-colors duration-300 ${isSolidNav ? "text-textmuted" : "text-white/80"}`}>
+              <p
+                className={`text-xs font-medium tracking-wide transition-colors duration-300 ${
+                  isSolidNav ? "text-gray-500" : "text-white/80"
+                }`}
+              >
                 Educational Institutions
               </p>
             </div>
           </Link>
 
-          {/* Desktop nav — DISABLED (no routing, content preserved) */}
+          {/* Desktop nav */}
           <nav className="hidden xl:flex items-center gap-1">
             {navLinks.map((link) => {
               const isActive = location.pathname === link.href;
               return (
-                <span
+                <Link
                   key={link.label}
-                  title="Navigation coming soon"
-                  className={`px-3 py-2 text-sm font-medium rounded relative group cursor-not-allowed select-none
-                    ${isSolidNav ? "text-textdark/60" : "text-white/50"}`}
+                  to={link.href}
+                  onClick={(e) => {
+                    if (link.href !== "/") e.preventDefault();
+                  }}
+                  className={`px-3 py-2 text-sm font-medium rounded relative group transition-colors duration-200 ${
+                    isSolidNav
+                      ? isActive
+                        ? "text-[#1A237E] font-bold"
+                        : "text-gray-700 hover:text-[#1A237E]"
+                      : isActive
+                        ? "text-white font-bold"
+                        : "text-white/80 hover:text-white"
+                  }`}
                 >
                   {link.label}
-                  {isActive && (
-                    <span className="absolute bottom-0 left-1/2 -translate-x-1/2 h-0.5 w-5 bg-accent rounded" />
+                  {link.href !== "/" && (
+                    <span className="absolute inset-0 z-10" title="Coming Soon" />
                   )}
-                </span>
+                  {isActive && (
+                    <span
+                      className="absolute bottom-0 left-1/2 -translate-x-1/2 h-0.5 w-5 rounded"
+                      style={{ background: "#FF6F00" }}
+                    />
+                  )}
+                </Link>
               );
             })}
           </nav>
 
-          {/* CTA + Hamburger */}
-          <div className="flex items-center gap-3">
-            {/* Apply Now disabled */}
-            <a
-              href="#"
-              onClick={(e) => e.preventDefault()}
-              className="hidden md:inline-flex items-center justify-center bg-accent/80 text-white text-sm font-bold px-3 py-2 rounded-lg cursor-not-allowed select-none shadow-sm"
-            >
-              Apply Now
-            </a>
-            <button
-              onClick={() => setMenuOpen(!menuOpen)}
-              className={`xl:hidden p-2 rounded-lg transition-colors duration-200
-                ${isSolidNav ? "text-primary hover:bg-primary/10" : "text-white hover:bg-white/20"}`}
-              aria-label="Toggle menu"
-            >
-              {menuOpen ? <X size={22} /> : <Menu size={22} />}
-            </button>
-          </div>
+          {/* Hamburger only */}
+          <button
+            onClick={() => setMenuOpen(!menuOpen)}
+            className={`xl:hidden p-2 rounded-lg transition-colors duration-200 ${
+              isSolidNav ? "text-[#1A237E] hover:bg-blue-50" : "text-white hover:bg-white/20"
+            }`}
+            aria-label="Toggle menu"
+          >
+            {menuOpen ? <X size={22} /> : <Menu size={22} />}
+          </button>
         </div>
       </div>
 
@@ -116,16 +134,18 @@ export default function Navbar() {
         />
       )}
 
-      {/* Mobile drawer Side Panel */}
+      {/* Mobile drawer */}
       <div
-        className={`xl:hidden fixed top-0 right-0 h-full w-[65%] sm:w-[50%] bg-white shadow-2xl z-50 transform transition-transform duration-300 ease-in-out flex flex-col
-          ${menuOpen ? "translate-x-0" : "translate-x-full"}`}
+        className={`xl:hidden fixed right-0 h-screen w-[65%] sm:w-[50%] bg-white shadow-2xl z-50 transform transition-transform duration-300 ease-in-out flex flex-col ${
+          menuOpen ? "translate-x-0" : "translate-x-full"
+        }`}
+        style={{ top: `${TICKER_H}px` }}
       >
         <div className="flex items-center justify-between p-4 border-b border-gray-100">
-          <span className="font-bold text-primary">Menu</span>
+          <span className="font-bold text-[#1A237E]">Menu</span>
           <button
             onClick={() => setMenuOpen(false)}
-            className="p-2 text-textmuted hover:bg-lightbg rounded-lg"
+            className="p-2 text-gray-500 hover:bg-gray-100 rounded-lg"
           >
             <X size={22} />
           </button>
@@ -135,30 +155,31 @@ export default function Navbar() {
           {navLinks.map((link) => {
             const isActive = location.pathname === link.href;
             return (
-              /* DISABLED — text preserved, no navigation */
-              <span
+              <Link
                 key={link.label}
-                title="Navigation coming soon"
-                className={`w-full text-left px-4 py-3 text-sm font-medium rounded-lg flex items-center gap-2 cursor-not-allowed select-none
-                  ${isActive
-                    ? "bg-primary/10 text-primary/60 border-l-4 border-accent/40"
-                    : "text-textdark/50"
-                  }`}
+                to={link.href}
+                onClick={(e) => {
+                  if (link.href !== "/") {
+                    e.preventDefault();
+                  } else {
+                    setMenuOpen(false);
+                  }
+                }}
+                className={`w-full text-left px-4 py-3 text-sm font-medium rounded-lg flex items-center gap-2 transition-colors duration-200 ${
+                  isActive
+                    ? "bg-[#1A237E]/10 text-[#1A237E] font-bold border-l-4 border-[#FF6F00]"
+                    : "text-gray-700 hover:bg-gray-50 hover:text-[#1A237E]"
+                }`}
               >
-                <span className="w-1.5 h-1.5 rounded-full bg-accent/40 shrink-0" />
+                <span
+                  className="w-1.5 h-1.5 rounded-full shrink-0"
+                  style={{ background: "#FF6F00" }}
+                />
                 {link.label}
-              </span>
+
+              </Link>
             );
           })}
-
-          {/* Apply Now disabled in mobile */}
-          <a
-            href="#"
-            onClick={(e) => e.preventDefault()}
-            className="mt-4 w-fit mx-auto bg-accent/80 text-white text-sm font-bold py-2 px-6 rounded-lg cursor-not-allowed select-none shadow-sm"
-          >
-            Apply Now
-          </a>
         </div>
       </div>
     </header>

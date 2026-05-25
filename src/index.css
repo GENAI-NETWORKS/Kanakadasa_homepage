@@ -2,21 +2,30 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ── Tamil Nadu School Vibrant Palette ── */
 :root {
-  --primary:       #1A472A;   /* deep forest green */
-  --accent:        #E63946;   /* vivid crimson red */
-  --secondary:     #F4A261;   /* warm amber */
-  --light-bg:      #FFF8F0;   /* warm cream */
-  --text-dark:     #1C1C1E;
-  --text-muted:    #6B6B6B;
-  --primary-light: #2D6A4F;
-  --primary-dark:  #0D2818;
+  --royal:    #1A237E;   /* deep royal blue */
+  --saffron:  #FF6F00;   /* vibrant saffron/orange */
+  --crimson:  #C62828;   /* deep red */
+  --gold:     #F9A825;   /* golden amber */
+  --emerald:  #1B5E20;   /* deep emerald */
+  --sky:      #0277BD;   /* vivid sky blue */
+  --violet:   #6A1B9A;   /* rich violet */
+  --teal:     #00695C;   /* deep teal */
+
+  /* legacy */
+  --primary:       #1A237E;
+  --accent:        #FF6F00;
+  --secondary:     #F9A825;
+  --light-bg:      #FFF8F0;
+  --text-dark:     #1A1A2E;
+  --text-muted:    #5C5C7A;
+  --primary-light: #283593;
+  --primary-dark:  #0D1B6E;
 }
 
 @layer base {
-  html {
-    scroll-behavior: smooth;
-  }
+  html { scroll-behavior: smooth; }
 
   body {
     font-family: "DM Sans", sans-serif;
@@ -26,132 +35,172 @@
     -moz-osx-font-smoothing: grayscale;
   }
 
-  h1, h2, h3 {
-    font-family: "DM Sans", sans-serif;
-  }
+  h1, h2, h3 { font-family: "DM Sans", sans-serif; }
 }
 
 @layer components {
   .section-label {
-    @apply text-xs font-semibold uppercase tracking-widest text-accent mb-3 block;
+    @apply text-xs font-bold uppercase tracking-[0.25em] mb-3 block;
+    color: var(--saffron);
   }
 
   .section-heading {
-    @apply font-heading text-3xl md:text-4xl font-bold text-primary leading-tight;
+    @apply font-heading text-3xl md:text-4xl font-bold leading-tight;
+    color: var(--royal);
   }
 
   .btn-primary {
-    @apply inline-flex items-center gap-2 bg-accent text-white font-semibold px-6 py-3 rounded-lg hover:brightness-110 transition-all duration-300 shadow-md hover:shadow-lg hover:-translate-y-0.5;
+    @apply inline-flex items-center gap-2 text-white font-bold px-6 py-3 rounded-xl
+           hover:brightness-110 transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-0.5;
+    background: linear-gradient(135deg, var(--saffron), var(--crimson));
   }
 
   .btn-outline {
-    @apply inline-flex items-center gap-2 border-2 border-white text-white font-semibold px-6 py-3 rounded-lg hover:bg-white hover:text-primary transition-all duration-300;
+    @apply inline-flex items-center gap-2 border-2 border-white text-white font-semibold
+           px-6 py-3 rounded-xl hover:bg-white transition-all duration-300;
+    color: white;
   }
 
   .btn-navy {
-    @apply inline-flex items-center gap-2 bg-primary text-white font-semibold px-6 py-3 rounded-lg hover:bg-primary-dark transition-all duration-300 shadow-md hover:shadow-lg;
+    @apply inline-flex items-center gap-2 text-white font-bold px-6 py-3 rounded-xl
+           hover:brightness-110 transition-all duration-300 shadow-md;
+    background: var(--royal);
   }
 
-  .card-hover {
-    @apply hover:shadow-xl hover:-translate-y-1 transition-all duration-300;
-  }
+  .card-hover { @apply hover:shadow-2xl hover:-translate-y-2 transition-all duration-400; }
 
-  .facility-icon-wrap {
-    @apply flex flex-col items-center gap-3 p-6 rounded-xl bg-white/10 hover:bg-white/20 transition-all duration-300 text-center cursor-default backdrop-blur-sm;
-  }
-
-  /* ── Disabled nav links ─────────────────────────── */
-  .nav-disabled {
-    @apply cursor-not-allowed opacity-70 select-none pointer-events-none;
-  }
-
-  /* ── Pattern: dots ──────────────────────────────── */
-  .pattern-dots {
-    background-image: radial-gradient(circle, #1A472A22 1px, transparent 1px);
-    background-size: 24px 24px;
-  }
-
-  /* ── Pattern: diagonal stripes ──────────────────── */
-  .pattern-stripes {
-    background-image: repeating-linear-gradient(
-      -45deg,
-      transparent,
-      transparent 8px,
-      rgba(26,71,42,0.04) 8px,
-      rgba(26,71,42,0.04) 16px
-    );
-  }
-
-  /* ── Pattern: grid ──────────────────────────────── */
-  .pattern-grid {
-    background-image:
-      linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px);
-    background-size: 40px 40px;
-  }
-
-  /* ── Wave divider SVG inline ─────────────────────── */
-  .wave-top::before {
+  /* ── section divider shapes ── */
+  .wave-bottom::after {
     content: "";
     display: block;
-    width: 100%;
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    right: 0;
     height: 60px;
-    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 60'%3E%3Cpath fill='%23FFF8F0' fill-opacity='1' d='M0,30L60,25C120,20,240,10,360,15C480,20,600,40,720,45C840,50,960,40,1080,30C1200,20,1320,10,1380,5L1440,0L1440,0L1380,0C1320,0,1200,0,1080,0C960,0,840,0,720,0C600,0,480,0,360,0C240,0,120,0,60,0L0,0Z'/%3E%3C/svg%3E") no-repeat top center;
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 60'%3E%3Cpath fill='%23ffffff' d='M0,30 C360,60 1080,0 1440,30 L1440,60 L0,60 Z'/%3E%3C/svg%3E") no-repeat bottom center;
     background-size: cover;
-    margin-top: -1px;
   }
 }
 
 @layer utilities {
-  .marquee-container {
-    overflow: hidden;
-    white-space: nowrap;
+  .marquee-container { overflow: hidden; white-space: nowrap; }
+
+  .text-gradient-saffron {
+    background: linear-gradient(135deg, #FF6F00 0%, #F9A825 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .text-gradient-royal {
+    background: linear-gradient(135deg, #1A237E 0%, #0277BD 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
   }
 
   .text-gradient {
-    background: linear-gradient(135deg, #E63946 0%, #F4A261 100%);
+    background: linear-gradient(135deg, #FF6F00 0%, #C62828 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
 
   .text-gradient-green {
-    background: linear-gradient(135deg, #1A472A 0%, #2D6A4F 100%);
+    background: linear-gradient(135deg, #1B5E20 0%, #00695C 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
 
-  .hide-scrollbar {
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-  }
-  .hide-scrollbar::-webkit-scrollbar {
-    display: none;
-  }
+  .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+  .hide-scrollbar::-webkit-scrollbar { display: none; }
 }
 
-/* Scrollbar (hidden globally) */
+/* Scrollbar hidden */
 ::-webkit-scrollbar { display: none; }
-html, body {
-  -ms-overflow-style: none;
-  scrollbar-width: none;
+html, body { -ms-overflow-style: none; scrollbar-width: none; }
+
+/* ── Ken Burns animation (slow zoom on images) ── */
+@keyframes kenBurns {
+  0%   { transform: scale(1.0) translate(0, 0); }
+  50%  { transform: scale(1.10) translate(-1%, -1%); }
+  100% { transform: scale(1.0) translate(0, 0); }
+}
+@keyframes kenBurns2 {
+  0%   { transform: scale(1.08) translate(1%, 0); }
+  50%  { transform: scale(1.0) translate(0, 1%); }
+  100% { transform: scale(1.08) translate(1%, 0); }
+}
+.ken-burns     { animation: kenBurns  12s ease-in-out infinite; }
+.ken-burns-alt { animation: kenBurns2 14s ease-in-out infinite; }
+
+/* ── Floating pulse animation ── */
+@keyframes floatBadge {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-8px); }
+}
+.float-badge { animation: floatBadge 3s ease-in-out infinite; }
+
+/* ── Shimmer / shine effect ── */
+@keyframes shimmer {
+  0%   { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+.shimmer-text {
+  background: linear-gradient(90deg, #FF6F00 0%, #F9A825 40%, #ffffff 50%, #F9A825 60%, #FF6F00 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shimmer 4s linear infinite;
 }
 
-/* Marquee animation */
-@keyframes marquee {
-  0%   { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
+/* ── Marquee ── */
+@keyframes marquee  { 0% { transform: translateX(0); }     100% { transform: translateX(-50%); } }
+@keyframes marquee2 { 0% { transform: translateX(100%); }  100% { transform: translateX(0); } }
+
+/* ── Pulse ring ── */
+@keyframes pulseRing {
+  0%   { box-shadow: 0 0 0 0 rgba(249,168,37,0.5); }
+  70%  { box-shadow: 0 0 0 16px rgba(249,168,37,0); }
+  100% { box-shadow: 0 0 0 0 rgba(249,168,37,0); }
 }
-@keyframes marquee2 {
-  0%   { transform: translateX(100%); }
-  100% { transform: translateX(0); }
+.pulse-ring { animation: pulseRing 2.5s infinite; }
+
+/* ── Gradient border card ── */
+.gradient-border {
+  border: 2px solid transparent;
+  background-clip: padding-box;
+  position: relative;
+}
+.gradient-border::before {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  border-radius: inherit;
+  background: linear-gradient(135deg, #FF6F00, #F9A825, #1A237E, #0277BD);
+  z-index: -1;
 }
 
-/* Diagonal clip for AboutSnapshot */
-.clip-diagonal-right {
-  clip-path: polygon(8% 0%, 100% 0%, 100% 100%, 0% 100%);
+/* ── Diagonal section clips ── */
+.clip-diagonal-right { clip-path: polygon(8% 0%, 100% 0%, 100% 100%, 0% 100%); }
+.clip-diagonal-left  { clip-path: polygon(0% 0%, 92% 0%, 100% 100%, 0% 100%); }
+
+/* ── Colourful animated underline ── */
+.animated-underline {
+  position: relative;
 }
-.clip-diagonal-left {
-  clip-path: polygon(0% 0%, 92% 0%, 100% 100%, 0% 100%);
+.animated-underline::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  border-radius: 9999px;
+  background: linear-gradient(90deg, #FF6F00, #F9A825, #C62828, #1A237E);
+  background-size: 300% auto;
+  animation: shimmer 3s linear infinite;
 }

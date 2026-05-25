@@ -1,163 +1,125 @@
 import { motion } from "framer-motion";
-import { GraduationCap, Briefcase, Award } from "lucide-react";
-import groupImg from "../assets/26.jpeg";
+import { Award, Briefcase, GraduationCap, User } from "lucide-react";
 
+/* ─── Leader data ─── */
 const leaders = [
   {
     name: "Mr. Samudi Elampuranam",
+    initials: "SE",
     qual: "M.A., M.Phil",
     role: "Chairperson",
-    icon: Award,
-    color: "#E63946",
-    message:
-      "A visionary educational leader dedicated to shaping young minds through quality education, discipline, and moral values. Under his leadership, the institution nurtures students with confidence, creativity, and social responsibility.",
+    Icon: Award,
+    color: "#0277BD", // Blue
+    gradient: "linear-gradient(135deg, #1A237E, #0277BD)",
+    quote: "Quality education, discipline & moral values — the pillars that shape every student's future.",
+    // To use real photos, replace null with: import("../assets/YOUR_PHOTO.jpeg")
+    img: null,
   },
   {
     name: "Mrs. Vasanthi Elampuranam",
+    initials: "VE",
     qual: "M.A., M.Phil",
     role: "Co-Founder",
-    icon: Briefcase,
-    color: "#F4A261",
-    message:
-      "Instrumental in strengthening value-based education and student welfare. She strongly believes education should nurture discipline, ethics, confidence, and humanity - developing both intellectual and moral capabilities.",
+    Icon: Briefcase,
+    color: "#FF6F00", // Saffron
+    gradient: "linear-gradient(135deg, #C62828, #FF6F00)",
+    quote: "Nurturing discipline, ethics & confidence — building both intellect and character in every child.",
+    img: null,
   },
   {
     name: "Mrs. Elakkiya Elampuranam",
+    initials: "EE",
     qual: "B.Tech, MBA (IIT Madras)",
     role: "Director",
-    icon: GraduationCap,
-    color: "#1A472A",
-    message:
-      "Brings modern educational vision and progressive leadership, integrating technology and smart learning methodologies. Her commitment towards academic excellence and student empowerment continuously strengthens the institution.",
+    Icon: GraduationCap,
+    color: "#00695C", // Emerald
+    gradient: "linear-gradient(135deg, #1B5E20, #00695C)",
+    quote: "Technology + modern pedagogy = empowered students ready to lead tomorrow's world.",
+    img: null,
   },
 ];
 
 export default function VisionaryLeadership() {
   return (
     <section id="leadership" className="relative py-24 overflow-hidden bg-white">
-
-      {/* ── Background decoration ── */}
-      <div className="absolute top-0 right-0 w-1/3 h-full bg-[#1A472A]/5 pointer-events-none" />
-      <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-[#E63946] via-[#F4A261] to-[#1A472A]" />
+      {/* Background decorations */}
+      <div className="absolute top-0 right-0 w-1/3 h-full bg-[#1A237E]/5 pointer-events-none" />
+      <div className="absolute top-0 left-0 right-0 h-1" style={{ background: "linear-gradient(90deg, #1A237E, #FF6F00, #1B5E20)" }} />
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-start">
-          
-          {/* ═══════════════════════════════
-              LEFT — Featured Image
-          ═══════════════════════════════ */}
-          <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="lg:col-span-5 relative"
-          >
-            {/* Header for mobile (shows above image on small screens) */}
-            <div className="lg:hidden text-center mb-8">
-              <span className="section-label text-center block">Visionary Leadership</span>
-              <h2 className="section-heading text-center">
-                The People Behind Our <span className="text-[#E63946]">Mission</span>
-              </h2>
-            </div>
+        {/* ── Header ── */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="text-center mb-16"
+        >
+          <span className="section-label block text-center">Visionary Leadership</span>
+          <h2 className="section-heading text-center">
+            The People Behind Our <span className="text-[#FF6F00] animated-underline">Mission</span>
+          </h2>
+          <p className="text-gray-500 mt-4 max-w-2xl mx-auto text-sm sm:text-base font-sans leading-relaxed">
+            Guiding the next generation with unwavering dedication, discipline, and a forward-thinking vision to shape tomorrow's leaders.
+          </p>
+        </motion.div>
 
-            <div className="relative rounded-2xl overflow-hidden shadow-2xl ring-4 ring-white border border-gray-100 mt-2 lg:mt-0">
-              <img src={groupImg} alt="Leadership Team" className="w-full h-auto object-cover aspect-[4/5] lg:aspect-auto lg:h-[600px]" />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#1A472A]/90 via-[#1A472A]/20 to-transparent" />
-              <div className="absolute bottom-6 left-6 right-6">
-                <div className="w-12 h-1 bg-[#F4A261] mb-4" />
-                <p className="text-white font-heading font-medium text-lg md:text-xl leading-relaxed">
-                  "Guiding the next generation with unwavering dedication, discipline, and a forward-thinking vision."
-                </p>
-              </div>
-            </div>
-            
-            {/* Decorative element */}
-            <div className="absolute -bottom-6 -left-6 w-32 h-32 bg-[#E63946]/10 rounded-full blur-3xl pointer-events-none" />
-          </motion.div>
-
-          {/* ═══════════════════════════════
-              RIGHT — Header + Leader Cards
-          ═══════════════════════════════ */}
-          <div className="lg:col-span-7 flex flex-col">
-            
-            {/* Header for desktop */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-              className="hidden lg:block mb-10"
-            >
-              <span className="section-label">Visionary Leadership</span>
-              <h2 className="section-heading">
-                The People Behind Our <br />
-                <span className="text-[#E63946]">Mission</span>
-              </h2>
-              <div className="flex items-center gap-2 mt-5">
-                <div className="h-1 w-10 rounded-full bg-[#E63946]" />
-                <div className="h-1 w-4 rounded-full bg-[#F4A261]" />
-                <div className="h-1 w-2 rounded-full bg-[#1A472A]" />
-              </div>
-            </motion.div>
-
-            {/* Cards Stack */}
-            <div className="flex flex-col gap-5">
-              {leaders.map((leader, i) => {
-                const Icon = leader.icon;
-                return (
-                  <motion.div
-                    key={i}
-                    initial={{ opacity: 0, x: 30 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.5, delay: i * 0.12 }}
-                    className="relative bg-white rounded-2xl shadow-[0_4px_20px_rgba(0,0,0,0.03)] border border-gray-100 hover:shadow-[0_8px_30px_rgba(0,0,0,0.08)] hover:-translate-y-1 transition-all duration-300 overflow-hidden flex items-stretch group cursor-default"
+        {/* ── 3-Card Layout ── */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
+          {leaders.map((leader, i) => {
+            const Icon = leader.Icon;
+            return (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: i * 0.15 }}
+                whileHover={{ y: -10 }}
+                className="group relative bg-white rounded-3xl overflow-hidden transition-all duration-500 cursor-default flex flex-col h-[450px]"
+                style={{
+                  boxShadow: `0 20px 40px -15px ${leader.color}30, 0 0 0 1px rgba(0,0,0,0.05)`,
+                }}
+              >
+                {/* Large Portrait Image / Placeholder */}
+                <div 
+                  className="relative w-full h-3/5 overflow-hidden flex items-center justify-center font-black text-white text-6xl font-heading"
+                  style={{ background: leader.img ? "white" : leader.gradient }}
+                >
+                  {leader.img ? (
+                    <img src={leader.img} alt={leader.name} className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+                  ) : (
+                    <User size={120} strokeWidth={1} className="text-white/80" />
+                  )}
+                  {/* Subtle inner shadow overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-60" />
+                  
+                  {/* Icon badge floating at the bottom right of the image */}
+                  <div 
+                    className="absolute -bottom-5 right-6 w-12 h-12 rounded-full flex items-center justify-center text-white border-4 border-white shadow-lg z-20 group-hover:rotate-12 transition-transform duration-300"
+                    style={{ background: leader.color }}
                   >
-                    {/* Left accent bar */}
-                    <div className="w-2 shrink-0 transition-colors duration-300" style={{ background: leader.color }} />
+                    <Icon size={20} strokeWidth={2.5} />
+                  </div>
+                </div>
 
-                    <div className="p-5 flex flex-col sm:flex-row gap-5 items-start w-full">
-                      
-                      {/* Icon */}
-                      <div
-                        className="w-14 h-14 rounded-full flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform duration-300"
-                        style={{ background: leader.color + "18" }}
-                      >
-                        <Icon size={26} strokeWidth={1.5} style={{ color: leader.color }} />
-                      </div>
-
-                      {/* Content */}
-                      <div className="flex-1 min-w-0">
-                        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 mb-2">
-                          <div>
-                            <h3 className="font-heading font-bold text-[#1A472A] text-lg leading-tight mb-0.5">
-                              {leader.name}
-                            </h3>
-                            <p className="text-xs text-gray-400 font-sans font-medium">{leader.qual}</p>
-                          </div>
-                          <span
-                            className="inline-block text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-full font-sans shrink-0 w-fit"
-                            style={{ background: leader.color + "18", color: leader.color }}
-                          >
-                            {leader.role}
-                          </span>
-                        </div>
-                        
-                        <div className="h-px w-full my-3" style={{ background: "linear-gradient(to right, #f3f4f6, transparent)" }} />
-
-                        <p className="text-sm text-gray-500 leading-relaxed font-sans">
-                          {leader.message}
-                        </p>
-                      </div>
-                    </div>
-                  </motion.div>
-                );
-              })}
-            </div>
-
-          </div>
+                {/* Content Area */}
+                <div className="p-8 flex flex-col flex-1 bg-white relative z-10">
+                  <h3 className="text-xl sm:text-2xl font-black font-heading mb-1 transition-colors duration-300"
+                      style={{ color: leader.color }}>
+                    {leader.name}
+                  </h3>
+                  <p className="text-xs font-bold uppercase tracking-[0.2em] mb-2" style={{ color: leader.color }}>
+                    {leader.role}
+                  </p>
+                  <p className="text-sm text-gray-500 font-sans font-medium">
+                    {leader.qual}
+                  </p>
+                </div>
+              </motion.div>
+            );
+          })}
         </div>
       </div>
     </section>

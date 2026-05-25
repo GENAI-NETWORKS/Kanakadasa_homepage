@@ -2,7 +2,7 @@ import { Helmet } from 'react-helmet-async';
 import PageHero from '../components/PageHero';
 import FacultyDetails from '../components/FacultyDetails';
 import AchievementsDetails from '../components/AchievementsDetails';
-import ManagementMessage from '../components/ManagementMessage';
+import VisionaryLeadership from '../components/VisionaryLeadership';
 import { Target, Lightbulb, Heart, Quote, Star, Users, Brain, Shield, Sparkles, BookOpen, CheckCircle } from 'lucide-react';
 
 export default function AboutPage() {
@@ -250,88 +250,7 @@ To provide student-centered education through innovative teaching methods, moder
 
 
 
-      <ManagementMessage />
-      
-      {/* Management Team Profiles Verbatim */}
-      <section className="py-20 bg-lightbg">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="section-heading">Management & Leadership</h2>
-            <div className="w-16 h-1 bg-accent mx-auto mt-6 rounded-full" />
-          </div>
-
-          <div className="space-y-8">
-            <div className="bg-white p-8 rounded-2xl border border-gray-100 shadow-sm">
-              <h3 className="text-xl font-bold text-primary mb-3 text-left">Chairperson Profile & Message – Mr. Samudi Elampuranam M.A., M.Phil</h3>
-              <p className="text-textmuted leading-relaxed text-justify">
-                Samudi Elampuranam is a visionary educational leader dedicated to shaping young minds through quality education, discipline, and moral values. With rich academic knowledge and strong leadership experience, he has played a significant role in establishing a student-centered educational environment focused on academic excellence and holistic development. Under his leadership, the institution continues to nurture students with confidence, creativity, leadership qualities, and social responsibility. He firmly believes that education should empower students to become responsible citizens and future leaders capable of contributing positively to society and the nation.
-              </p>
-            </div>
-
-            <div className="bg-white p-8 rounded-2xl border border-gray-100 shadow-sm">
-              <h3 className="text-xl font-bold text-primary mb-3 text-left">Co-Founder Profile & Message – Mrs. Vasanthi Elampuranam M.A., M.Phil</h3>
-              <p className="text-textmuted leading-relaxed text-justify">
-                Vasanthi Elampuranam has been instrumental in strengthening the institution’s commitment towards value-based education and student welfare. Her dedication, academic vision, and compassionate leadership continue to inspire both students and faculty members. She strongly believes that education should not only develop intellectual abilities but also nurture discipline, ethics, confidence, and humanity. Through her continuous support and guidance, the institution maintains a caring and motivating educational environment that promotes the overall growth of every child.
-              </p>
-            </div>
-
-            <div className="bg-white p-8 rounded-2xl border border-gray-100 shadow-sm">
-              <h3 className="text-xl font-bold text-primary mb-3 text-left">Director Profile & Message – Mrs. Elakkiya Elampuranam B.Tech., MBA (IIT Madras)</h3>
-              <p className="text-textmuted leading-relaxed text-justify">
-                Elakkiya Elampuranam brings modern educational vision, innovative administration, and progressive leadership to the institution. With a strong academic and professional background, she continuously works towards integrating technology, smart learning methodologies, and future-ready educational practices within the institution. She believes in nurturing students with creativity, independent thinking, communication skills, and leadership qualities that prepare them for global opportunities. Her commitment towards academic excellence and student empowerment continues to strengthen the institution’s reputation and growth.
-              </p>
-            </div>
-
-            <div className="bg-white p-8 rounded-2xl border border-gray-100 shadow-sm">
-              <h3 className="text-xl font-bold text-primary mb-3 text-left">Principal Profile & Message – Mr. Annesh Vijay B.Tech., M.A., B.Ed</h3>
-              <p className="text-textmuted leading-relaxed text-justify">
-                Annesh Vijay is a dedicated academician committed to creating a disciplined, student-friendly, and academically enriching environment. His leadership focuses on conceptual learning, communication skills, moral values, and holistic student development. He encourages students to think independently, participate actively, and pursue academic excellence with confidence and determination. Through systematic academic planning and continuous mentoring, he strives to guide students towards successful futures and responsible citizenship.
-              </p>
-            </div>
-
-            <div className="bg-white p-8 rounded-2xl border border-gray-100 shadow-sm">
-              <h3 className="text-xl font-bold text-primary mb-3 text-left">Principal Profile & Message – Mr. Selvaraj M.A., B.Ed</h3>
-              <p className="text-textmuted leading-relaxed text-justify">
-                Selvaraj is a committed educational leader with a strong passion for academic excellence, discipline, and student welfare. He continuously works towards creating a positive learning atmosphere where students are encouraged to achieve their full potential academically and personally. His dedication towards systematic administration, quality teaching practices, and value-based education helps students grow into disciplined, confident, and responsible individuals prepared for future challenges.
-              </p>
-            </div>
-
-            <div className="bg-white p-8 rounded-2xl border border-gray-100 shadow-sm">
-              <h3 className="text-xl font-bold text-primary mb-3 text-left">Principal Profile & Message – Mr. Kuppuraj M.A., B.Ed</h3>
-              <p className="text-textmuted leading-relaxed text-justify">
-                Kuppuraj plays a vital role in nurturing young learners through compassionate guidance, innovative teaching support, and child-friendly educational practices. He strongly believes that the early years of education form the foundation for lifelong learning and personality development. His focus on discipline, creativity, communication skills, and joyful learning helps students develop confidence, curiosity, and strong academic foundations in a caring educational environment.
-              </p>
-            </div>
-
-            <div className="grid md:grid-cols-2 gap-6 mt-8">
-              <div className="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm">
-                <h3 className="text-lg font-bold text-primary mb-3 text-left">Administrative Leadership</h3>
-                <p className="text-sm text-textmuted leading-relaxed text-justify">
-                  The administrative leadership of the institution ensures smooth academic operations, disciplined campus management, student welfare, and continuous institutional development. Through effective planning, systematic coordination, and strong organizational support, the administration maintains a productive and student-focused educational environment.
-                </p>
-              </div>
-              <div className="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm">
-                <h3 className="text-lg font-bold text-primary mb-3 text-left">Academic Leadership</h3>
-                <p className="text-sm text-textmuted leading-relaxed text-justify">
-                  The institution’s academic leadership team is dedicated to maintaining high educational standards through innovative teaching practices, curriculum planning, faculty development, continuous assessments, and student mentoring. The leadership encourages academic excellence, creativity, discipline, and holistic student growth.
-                </p>
-              </div>
-              <div className="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm">
-                <h3 className="text-lg font-bold text-primary mb-3 text-left">Institutional Governance</h3>
-                <p className="text-sm text-textmuted leading-relaxed text-justify">
-                  The institution follows a well-structured governance system focused on transparency, quality education, ethical values, and student-centered administration. Strong leadership and organized management practices ensure effective decision-making, institutional progress, and continuous academic improvement.
-                </p>
-              </div>
-              <div className="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm">
-                <h3 className="text-lg font-bold text-primary mb-3 text-left">Leadership Towards Excellence</h3>
-                <p className="text-sm text-textmuted leading-relaxed text-justify">
-                  The leadership of ST. Kanakadasa Educational Institutions remains committed to providing quality education that empowers students with knowledge, discipline, leadership qualities, and moral values. Through visionary guidance, innovative educational practices, and holistic development initiatives, the institution continues its journey towards academic excellence and societal contribution.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      <VisionaryLeadership />
 
       <FacultyDetails />
       <AchievementsDetails />

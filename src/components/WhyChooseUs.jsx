@@ -1,250 +1,143 @@
 import { motion } from "framer-motion";
-import { CheckCircle2, Star, Flame, Gem } from "lucide-react";
+import { CheckCircle2, ShieldCheck, GraduationCap, Users, Bus, Trophy } from "lucide-react";
 
-// Asset images — diverse school moments
-import imgAssembly   from "../assets/1.jpeg";   // grand assembly / school building
-import imgCultural   from "../assets/7.jpeg";   // classical dance performance
-import imgAward      from "../assets/10.jpeg";  // teacher-student award moment
-import imgCaptains   from "../assets/23.jpeg";  // house captains pride
+import stickyImg from "../assets/1.jpeg"; // We'll use one majestic image for the sticky side
 
-const pillars = [
-  {
-    img: imgAssembly,
-    title: "Discipline & Values",
-    desc: "Daily prayer, morning assembly, and a strong code of conduct instil lifelong values in every student.",
-    accent: "#E63946",   // crimson
+const features = [
+  { 
+    title: "20+ Years of Excellence", 
+    desc: "A proven legacy of shaping bright minds and successful futures.",
+    icon: Trophy,
+    color: "#FF6F00"
   },
-  {
-    img: imgCultural,
-    title: "Cultural Excellence",
-    desc: "Classical dance, drama, and fine arts keep Indian heritage alive while nurturing creativity and stage confidence.",
-    accent: "#F4A261",   // amber / saffron
+  { 
+    title: "Smart Digital Classrooms", 
+    desc: "Interactive technology integrated into everyday learning.",
+    icon: CheckCircle2,
+    color: "#0277BD"
   },
-  {
-    img: imgAward,
-    title: "Academic Recognition",
-    desc: "Regular felicitation of achievers motivates students to excel in academics, sports, and co-curricular arenas.",
-    accent: "#1A472A",   // forest green
+  { 
+    title: "NEET / JEE Coaching", 
+    desc: "Dedicated preparation programs for competitive entrance exams.",
+    icon: GraduationCap,
+    color: "#C62828"
   },
-  {
-    img: imgCaptains,
-    title: "Student Leadership",
-    desc: "House captain system and student councils build responsibility, teamwork, and leadership from an early age.",
-    accent: "#E63946",   // crimson
+  { 
+    title: "Experienced Faculty", 
+    desc: "Highly qualified educators committed to student success.",
+    icon: Users,
+    color: "#1B5E20"
   },
-];
-
-const reasons = [
-  "20+ Years of Educational Excellence",
-  "Experienced & Dedicated Faculty Team",
-  "Smart Digital Classrooms",
-  "Student-Centric Learning Approach",
-  "Integrated NEET/JEE Coaching",
-  "Well-Equipped Science & Computer Labs",
-  "Strong Academic Monitoring System",
-  "Spoken English & Communication Skills",
-  "Practical & Concept-Based Learning",
-  "Individual Attention for Every Student",
-  "Safe & Secure Campus Environment",
-  "Value-Based & Discipline-Oriented Education",
-  "Excellent Sports & Co-Curricular Activities",
-  "Creative & Leadership Development Programs",
-  "Transportation Facilities Across Bargur Area",
-  "Holistic Development Through Clubs",
-  "Modern Teaching Methodologies",
-  "Parent-Friendly Academic Support System",
-  "Focus on Moral, Ethical & Spiritual Values",
-  "Future-Ready Academic Environment",
+  { 
+    title: "Safe & Secure Campus", 
+    desc: "24/7 security ensuring peace of mind for parents.",
+    icon: ShieldCheck,
+    color: "#6A1B9A"
+  },
+  { 
+    title: "Reliable Transportation", 
+    desc: "Extensive fleet covering the entire Bargur region safely.",
+    icon: Bus,
+    color: "#00695C"
+  },
 ];
 
 export default function WhyChooseUs() {
   return (
-    <section className="relative py-20 overflow-hidden bg-[#FFF8F0]">
-
-      {/* ── Decorative background: subtle Kolam / rangoli dots ── */}
-      <div
-        className="absolute inset-0 pointer-events-none opacity-30"
-        style={{
-          backgroundImage:
-            "radial-gradient(circle, #E6394622 1.5px, transparent 1.5px), radial-gradient(circle, #1A472A22 1.5px, transparent 1.5px)",
-          backgroundSize: "30px 30px, 60px 60px",
-          backgroundPosition: "0 0, 15px 15px",
-        }}
-      />
-
-      {/* ── Top saffron-to-green tricolour bar ── */}
+    <section className="relative py-24 bg-[#FFF8F0]">
+      {/* Rainbow top bar */}
       <div className="absolute top-0 left-0 right-0 h-1.5 flex">
-        <div className="flex-1 bg-[#FF9933]" />
-        <div className="flex-1 bg-white border-y border-gray-200" />
-        <div className="flex-1 bg-[#138808]" />
+        {["#FF6F00","#F9A825","#C62828","#1A237E","#1B5E20"].map((c, i) => (
+          <div key={i} className="flex-1" style={{ background: c }} />
+        ))}
       </div>
 
-      {/* ── Decorative corner lotuses (SVG) ── */}
-      <svg className="absolute top-6 left-4 w-20 h-20 opacity-10 text-[#FF9933]" viewBox="0 0 100 100" fill="currentColor">
-        <ellipse cx="50" cy="70" rx="10" ry="30" transform="rotate(-20 50 50)" />
-        <ellipse cx="50" cy="70" rx="10" ry="30" />
-        <ellipse cx="50" cy="70" rx="10" ry="30" transform="rotate(20 50 50)" />
-        <ellipse cx="50" cy="70" rx="10" ry="30" transform="rotate(40 50 50)" />
-        <ellipse cx="50" cy="70" rx="10" ry="30" transform="rotate(-40 50 50)" />
-        <circle cx="50" cy="55" r="8" />
-      </svg>
-      <svg className="absolute top-6 right-4 w-20 h-20 opacity-10 text-[#138808]" viewBox="0 0 100 100" fill="currentColor">
-        <ellipse cx="50" cy="70" rx="10" ry="30" transform="rotate(-20 50 50)" />
-        <ellipse cx="50" cy="70" rx="10" ry="30" />
-        <ellipse cx="50" cy="70" rx="10" ry="30" transform="rotate(20 50 50)" />
-        <ellipse cx="50" cy="70" rx="10" ry="30" transform="rotate(40 50 50)" />
-        <ellipse cx="50" cy="70" rx="10" ry="30" transform="rotate(-40 50 50)" />
-        <circle cx="50" cy="55" r="8" />
-      </svg>
-
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-
-        {/* ── Section Header ── */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-14"
-        >
-          <div className="flex items-center justify-center gap-3 mb-4">
-            <div className="h-px w-16 bg-gradient-to-r from-transparent to-[#FF9933]" />
-            <Flame size={22} className="text-[#FF9933]" strokeWidth={1.5} />
-            <div className="h-px w-16 bg-gradient-to-l from-transparent to-[#FF9933]" />
-          </div>
-
-          <span className="inline-block text-xs font-bold tracking-[0.25em] uppercase text-[#FF9933] bg-[#FF9933]/10 px-4 py-1 rounded-full mb-3">
-            Our Strengths
-          </span>
-          <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-[#1A472A] mb-4">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        {/* Mobile Header (Hidden on LG) */}
+        <div className="lg:hidden text-center mb-12">
+          <span className="section-label block text-center">Our Strengths</span>
+          <h2 className="section-heading text-center">
             Why Choose{" "}
-            <span className="relative inline-block">
-              <span className="relative z-10 text-[#E63946]">St. Kanakadasa?</span>
-              <span
-                className="absolute -bottom-1 left-0 right-0 h-1 rounded-full"
-                style={{ background: "linear-gradient(90deg,#FF9933,#138808)" }}
-              />
-            </span>
+            <span className="text-gradient animated-underline">St. Kanakadasa?</span>
           </h2>
-          <p className="max-w-2xl mx-auto text-[#4a5568] leading-relaxed text-base sm:text-lg">
-            A legacy of values, discipline, and excellence - rooted in the spirit of Sri Kanakadasa and dedicated to shaping India's future leaders.
-          </p>
-        </motion.div>
-
-        {/* ── Four Pillar Cards with Assets ── */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
-          {pillars.map((p, i) => (
-            <motion.div
-              key={i}
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: i * 0.1 }}
-              className="group relative rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-400 border border-white/60"
-            >
-              {/* Photo */}
-              <div className="relative h-52 overflow-hidden">
-                <img
-                  src={p.img}
-                  alt={p.title}
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                />
-                {/* Gradient overlay */}
-                <div
-                  className="absolute inset-0"
-                  style={{
-                    background: `linear-gradient(to top, ${p.accent}ee 0%, ${p.accent}44 50%, transparent 100%)`,
-                  }}
-                />
-                {/* Number badge */}
-                <div
-                  className="absolute top-3 left-3 w-8 h-8 rounded-full flex items-center justify-center text-white font-bold text-sm shadow-md"
-                  style={{ background: p.accent }}
-                >
-                  {String(i + 1).padStart(2, "0")}
-                </div>
-              </div>
-
-              {/* Text body */}
-              <div className="bg-white px-5 py-4 border-t-4" style={{ borderColor: p.accent }}>
-                <h3 className="font-heading font-bold text-[#1A472A] text-lg mb-1">{p.title}</h3>
-                <p className="text-sm text-[#4a5568] leading-relaxed">{p.desc}</p>
-              </div>
-            </motion.div>
-          ))}
         </div>
 
-        {/* ── Reasons Grid — inside a decorated card ── */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="relative rounded-3xl overflow-hidden shadow-xl"
-        >
-          {/* Card background — saffron-to-green diagonal */}
-          <div
-            className="absolute inset-0"
-            style={{
-              background:
-                "linear-gradient(135deg, #fff8f0 0%, #fffde7 40%, #e8f5e9 100%)",
-            }}
-          />
-          {/* Decorative border top */}
-          <div className="absolute top-0 left-0 right-0 h-1.5 flex">
-            <div className="flex-1 bg-[#FF9933]" />
-            <div className="flex-1 bg-white" />
-            <div className="flex-1 bg-[#138808]" />
-          </div>
-
-          <div className="relative z-10 px-8 py-10 lg:px-14 lg:py-12">
-            {/* Inner heading */}
-            <div className="flex items-center justify-center gap-3 mb-8">
-              <Star className="text-[#FF9933] fill-[#FF9933]/40" size={22} />
-              <h3 className="font-heading text-2xl font-bold text-[#1A472A] text-center">
-                Why Parents & Students Choose Us
+        {/* ── Sticky Split Layout ── */}
+        <div className="flex flex-col lg:flex-row gap-12 lg:gap-20 items-start">
+          
+          {/* LEFT: Sticky Image Display */}
+          <div className="w-full lg:w-1/2 lg:sticky lg:top-32 relative h-[500px] lg:h-[600px] rounded-3xl overflow-hidden shadow-2xl border-4 border-white">
+            <img 
+              src={stickyImg} 
+              alt="Campus Assembly" 
+              className="absolute inset-0 w-full h-full object-cover"
+            />
+            {/* Gradient Overlay */}
+            <div className="absolute inset-0 bg-gradient-to-tr from-[#1A237E]/80 via-transparent to-transparent" />
+            
+            {/* Floating text on image */}
+            <div className="absolute bottom-10 left-10 right-10">
+              <h3 className="text-3xl sm:text-4xl font-black text-white font-heading leading-tight mb-3">
+                Building Futures, <br/>Shaping Character.
               </h3>
-              <Star className="text-[#FF9933] fill-[#FF9933]/40" size={22} />
-            </div>
-
-            <div className="grid sm:grid-cols-2 lg:grid-cols-2 gap-y-3 gap-x-10 max-w-4xl mx-auto">
-              {reasons.map((reason, idx) => (
-                <motion.div
-                  key={idx}
-                  initial={{ opacity: 0, x: -10 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.3, delay: idx * 0.025 }}
-                  className="flex items-start gap-3 group"
-                >
-                  <CheckCircle2
-                    className="shrink-0 mt-0.5 group-hover:scale-110 transition-transform"
-                    size={19}
-                    style={{ color: idx % 2 === 0 ? "#138808" : "#E63946" }}
-                  />
-                  <span className="text-[#2d3748] font-medium text-sm sm:text-base leading-relaxed group-hover:text-[#1A472A] transition-colors">
-                    {reason}
-                  </span>
-                </motion.div>
-              ))}
-            </div>
-
-            {/* Bottom decorative divider */}
-            <div className="flex items-center justify-center gap-4 mt-10">
-              <div className="h-px flex-1 max-w-xs bg-gradient-to-r from-transparent to-[#FF9933]/50" />
-              <Gem size={18} className="text-[#FF9933]/80" strokeWidth={1.5} />
-              <div className="h-px flex-1 max-w-xs bg-gradient-to-l from-transparent to-[#138808]/50" />
+              <div className="w-16 h-1.5 bg-[#FF6F00] rounded-full" />
             </div>
           </div>
-        </motion.div>
 
-      </div>
+          {/* RIGHT: Scrolling Features */}
+          <div className="w-full lg:w-1/2 flex flex-col justify-center py-4 lg:py-20">
+            
+            {/* Desktop Header */}
+            <div className="hidden lg:block mb-16">
+              <span className="section-label block">Our Strengths</span>
+              <h2 className="section-heading text-[#1A237E] leading-tight">
+                Why Choose <br/>
+                <span className="text-gradient animated-underline">St. Kanakadasa?</span>
+              </h2>
+            </div>
 
-      {/* ── Bottom saffron-green bar ── */}
-      <div className="absolute bottom-0 left-0 right-0 h-1.5 flex">
-        <div className="flex-1 bg-[#FF9933]" />
-        <div className="flex-1 bg-white border-y border-gray-200" />
-        <div className="flex-1 bg-[#138808]" />
+            {/* Features List */}
+            <div className="space-y-10">
+              {features.map((feat, i) => {
+                const Icon = feat.icon;
+                return (
+                  <motion.div 
+                    key={i}
+                    initial={{ opacity: 0, x: 30 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true, margin: "-50px" }}
+                    transition={{ duration: 0.5, delay: i * 0.1 }}
+                    className="flex gap-6 group"
+                  >
+                    {/* Icon Column */}
+                    <div className="shrink-0 relative">
+                      <div className="w-14 h-14 rounded-2xl flex items-center justify-center bg-white shadow-lg border relative z-10 transition-transform duration-300 group-hover:scale-110 group-hover:-rotate-3" style={{ borderColor: `${feat.color}30` }}>
+                        <Icon size={24} style={{ color: feat.color }} strokeWidth={2.5} />
+                      </div>
+                      {/* Decorative drop shadow line */}
+                      {i !== features.length - 1 && (
+                        <div className="absolute top-14 bottom-[-40px] left-1/2 -translate-x-1/2 w-0.5 bg-gray-200" />
+                      )}
+                    </div>
+                    
+                    {/* Text Column */}
+                    <div className="pt-2">
+                      <h4 className="text-xl font-bold font-heading text-gray-900 mb-2 group-hover:text-[#1A237E] transition-colors">
+                        {feat.title}
+                      </h4>
+                      <p className="text-gray-600 font-sans leading-relaxed">
+                        {feat.desc}
+                      </p>
+                    </div>
+                  </motion.div>
+                );
+              })}
+            </div>
+
+          </div>
+
+        </div>
       </div>
     </section>
   );

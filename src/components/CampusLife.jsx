@@ -9,99 +9,111 @@ import img7 from "../assets/31.jpeg";
 import img8 from "../assets/13.jpeg";
 
 const photos = [
-  { src: img1, caption: "Morning Assembly", span: "col-span-2 row-span-2" },
-  { src: img2, caption: "Flag Ceremony", span: "" },
-  { src: img3, caption: "Classical Dance", span: "" },
-  { src: img4, caption: "Award Ceremony", span: "" },
-  { src: img5, caption: "House Captains", span: "" },
-  { src: img6, caption: "Leadership Day", span: "" },
-  { src: img7, caption: "Cultural Night", span: "col-span-2" },
-  { src: img8, caption: "School Celebration", span: "" },
+  { src: img1, caption: "Morning Assembly", color: "#1A237E" },
+  { src: img2, caption: "Flag Ceremony",    color: "#FF6F00" },
+  { src: img3, caption: "Classical Dance",  color: "#C62828" },
+  { src: img4, caption: "Award Ceremony",   color: "#6A1B9A" },
+  { src: img5, caption: "House Captains",   color: "#F9A825" },
+  { src: img6, caption: "Leadership Day",   color: "#00695C" },
+  { src: img7, caption: "Cultural Night",   color: "#C62828" },
+  { src: img8, caption: "School Day",       color: "#0277BD" },
+];
+
+// Duplicate the array to create a seamless infinite loop
+const carouselPhotos = [...photos, ...photos];
+
+const counters = [
+  { val: "4+",   label: "Campus Buildings",  color: "#0277BD" },
+  { val: "10+",  label: "Clubs & Activities", color: "#FF6F00" },
+  { val: "500+", label: "Events Annually",    color: "#C62828" },
+  { val: "20+",  label: "Years of Legacy",    color: "#1B5E20" },
 ];
 
 export default function CampusLife() {
   return (
-    <section id="campus" className="relative py-24 overflow-hidden bg-[#FFF8F0]">
+    <section id="campus" className="relative py-24 overflow-hidden bg-[#0D1B6E]">
 
-      {/* ── Left diagonal accent ── */}
-      <div
-        className="absolute top-0 left-0 h-full w-[28%] bg-[#1A472A]/4 pointer-events-none"
-        style={{ clipPath: "polygon(0% 0%, 100% 0%, 70% 100%, 0% 100%)" }}
-      />
+      {/* Decorative dots */}
+      <div className="absolute inset-0 opacity-[0.04] pointer-events-none" style={{ backgroundImage: "radial-gradient(circle, #fff 1px, transparent 1px)", backgroundSize: "24px 24px" }} />
+      <div className="absolute top-0 right-0 w-96 h-96 rounded-full opacity-10 blur-3xl pointer-events-none" style={{ background: "#FF6F00" }} />
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="relative z-10 w-full">
 
-        {/* Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-12"
-        >
-          <span className="section-label text-center block">Campus Life</span>
-          <h2 className="section-heading text-center">
-            Life at <span className="text-[#E63946]">St. Kanakadasa</span>
-          </h2>
-          <p className="text-textmuted mt-4 max-w-xl mx-auto text-sm sm:text-base font-sans">
-            Every corner of our campus tells a story - of discipline, celebration, creativity, and unforgettable learning experiences that shape future leaders.
+        {/* Header (Centered) */}
+        <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }} className="text-center mb-16 px-4">
+          <p className="text-[#FF6F00] text-xs font-bold uppercase tracking-[0.25em] mb-3 flex items-center justify-center gap-3">
+            <span className="w-10 h-px bg-[#FF6F00]/50" />Campus Life<span className="w-10 h-px bg-[#FF6F00]/50" />
           </p>
-          <div className="flex items-center justify-center gap-2 mt-6">
-            <div className="h-1 w-12 rounded-full bg-[#E63946]" />
-            <div className="h-1 w-4 rounded-full bg-[#F4A261]" />
-          </div>
+          <h2 className="text-3xl sm:text-4xl font-black text-white font-heading">
+            Life at <span className="text-gradient-saffron animated-underline">St. Kanakadasa</span>
+          </h2>
         </motion.div>
 
-        {/* ── Photo masonry grid ── */}
-        <div className="grid grid-cols-2 md:grid-cols-4 auto-rows-[180px] gap-3">
-          {photos.map((photo, i) => (
-            <motion.div
-              key={i}
-              initial={{ opacity: 0, scale: 0.95 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.45, delay: i * 0.06 }}
-              className={`group relative rounded-xl overflow-hidden shadow-md hover:shadow-xl hover:z-10 transition-all duration-300 ${photo.span}`}
-            >
-              <img
-                src={photo.src}
-                alt={photo.caption}
-                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-              />
-              {/* Caption overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-              <div className="absolute bottom-0 left-0 right-0 p-3 translate-y-2 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-300">
-                <p className="text-white text-xs font-semibold font-sans uppercase tracking-wider">
-                  {photo.caption}
-                </p>
+        {/* ── Infinite Horizontal Marquee Carousel ── */}
+        <div className="relative w-full overflow-hidden flex items-center mb-20 py-4">
+          
+          {/* Gradient fading edges for smooth enter/exit */}
+          <div className="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-[#0D1B6E] to-transparent z-20 pointer-events-none" />
+          <div className="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-[#0D1B6E] to-transparent z-20 pointer-events-none" />
+
+          {/* Scrolling Track */}
+          <motion.div
+            className="flex gap-6 pl-6"
+            animate={{ x: [0, -1035 * 2] }} // Approximate width to scroll. Adjust based on content width.
+            transition={{
+              x: {
+                repeat: Infinity,
+                repeatType: "loop",
+                duration: 40,
+                ease: "linear",
+              },
+            }}
+          >
+            {carouselPhotos.map((photo, i) => (
+              <div 
+                key={i} 
+                className="relative shrink-0 w-72 sm:w-80 h-[400px] rounded-3xl overflow-hidden shadow-2xl group border border-white/10"
+              >
+                <img
+                  src={photo.src}
+                  alt={photo.caption}
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                />
+                {/* Gradient overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0D1B6E]/90 via-[#0D1B6E]/20 to-transparent" />
+                
+                {/* Top color bar */}
+                <div className="absolute top-0 left-0 right-0 h-1.5" style={{ background: photo.color }} />
+
+                {/* Caption */}
+                <div className="absolute bottom-6 left-6 right-6">
+                  <div className="w-8 h-1 rounded-full mb-3" style={{ background: photo.color }} />
+                  <h4 className="text-white text-xl font-bold font-heading">
+                    {photo.caption}
+                  </h4>
+                </div>
               </div>
-            </motion.div>
-          ))}
+            ))}
+          </motion.div>
         </div>
 
-        {/* Stat badges below grid */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.3 }}
-          className="flex flex-wrap items-center justify-center gap-4 mt-10"
-        >
-          {[
-            { val: "4+", label: "Campus Buildings" },
-            { val: "10+", label: "Clubs & Activities" },
-            { val: "500+", label: "Events Annually" },
-            { val: "20+", label: "Years of Legacy" },
-          ].map((stat) => (
-            <div
-              key={stat.val}
-              className="flex items-center gap-3 bg-white rounded-full px-5 py-2.5 shadow-md border border-gray-100"
-            >
-              <span className="font-heading font-bold text-[#E63946] text-lg">{stat.val}</span>
-              <span className="text-xs text-gray-500 font-sans uppercase tracking-widest">{stat.label}</span>
-            </div>
-          ))}
-        </motion.div>
+        {/* Stat badges */}
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }} className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            {counters.map((s, i) => (
+              <motion.div
+                key={i}
+                whileHover={{ scale: 1.05, y: -4 }}
+                className="rounded-2xl p-5 sm:p-8 text-center border border-white/10 cursor-default shadow-xl"
+                style={{ background: `${s.color}22` }}
+              >
+                <p className="text-4xl font-black font-heading" style={{ color: s.color }}>{s.val}</p>
+                <p className="text-white/70 text-[10px] sm:text-xs uppercase tracking-widest font-bold mt-2">{s.label}</p>
+              </motion.div>
+            ))}
+          </motion.div>
+        </div>
+
       </div>
     </section>
   );

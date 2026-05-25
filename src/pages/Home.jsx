@@ -61,14 +61,14 @@ export default function Home() {
       {/* 1.4 Academic Excellence */}
       <AcademicPrograms />
 
+      {/* 1.7 Facilities Highlights */}
+      <FacilitiesShowcase />
+
       {/* 1.5 Why Choose Us */}
       <WhyChooseUs />
 
       {/* 1.6 Our Institutions */}
       <OurInstitutions />
-
-      {/* 1.7 Facilities Highlights */}
-      <FacilitiesShowcase />
 
       {/* 1.8 Student Development Programs */}
       <StudentDevelopment />

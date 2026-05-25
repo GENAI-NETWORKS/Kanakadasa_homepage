@@ -1,167 +1,200 @@
+import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
-import { ArrowRight, Quote, BookOpen, HeartHandshake, MonitorPlay } from "lucide-react";
+import { ArrowRight, Star } from "lucide-react";
 import { Link } from "react-router-dom";
 
 import img1 from "../assets/2.jpeg";
 import img2 from "../assets/6.jpeg";
 import img3 from "../assets/10.jpeg";
 import img4 from "../assets/18.jpeg";
+import img5 from "../assets/23.jpeg";
 
-const images = [
-  { src: img1, alt: "St. Kanakadasa School campus assembly" },
-  { src: img2, alt: "Students in school assembly with flags" },
-  { src: img3, alt: "Teacher presenting award to student" },
-  { src: img4, alt: "House captains with colourful sashes" },
+function Counter({ end, suffix = "", duration = 2000 }) {
+  const [count, setCount] = useState(0);
+  const ref = useRef(null);
+  const started = useRef(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting && !started.current) {
+          started.current = true;
+          const start = Date.now();
+          const step = () => {
+            const elapsed = Date.now() - start;
+            const progress = Math.min(elapsed / duration, 1);
+            const ease = 1 - Math.pow(1 - progress, 3);
+            setCount(Math.floor(ease * end));
+            if (progress < 1) requestAnimationFrame(step);
+            else setCount(end);
+          };
+          requestAnimationFrame(step);
+        }
+      },
+      { threshold: 0.5 }
+    );
+    if (ref.current) observer.observe(ref.current);
+    return () => observer.disconnect();
+  }, [end, duration]);
+
+  return <span ref={ref}>{count}{suffix}</span>;
+}
+
+const stats = [
+  { end: 20, suffix: "+", label: "Years of Legacy" },
+  { end: 2000, suffix: "+", label: "Students Nurtured" },
+  { end: 100, suffix: "%", label: "Board Results" },
+  { end: 4, suffix: "+", label: "Campuses" },
 ];
 
 export default function AboutSnapshot() {
   return (
-    <section id="about" className="relative overflow-hidden bg-[#FFF8F0]">
-      {/* Diagonal green split on right */}
-      <div className="absolute inset-0 pointer-events-none">
-        <div
-          className="absolute top-0 right-0 h-full w-[52%] bg-[#1A472A] hidden lg:block"
-          style={{ clipPath: "polygon(14% 0%, 100% 0%, 100% 100%, 0% 100%)" }}
-        />
-        <div className="absolute left-0 top-0 h-full w-[50%] opacity-40"
-          style={{
-            backgroundImage: "radial-gradient(circle, #1A472A22 1px, transparent 1px)",
-            backgroundSize: "24px 24px",
-          }}
-        />
+    <section id="about" className="relative overflow-hidden bg-white py-0">
+
+      {/* ── TOP coloured bar ── */}
+      <div className="h-1.5 flex">
+        <div className="flex-1" style={{ background: "#1A237E" }} />
+        <div className="flex-1" style={{ background: "#FF6F00" }} />
+        <div className="flex-1" style={{ background: "#C62828" }} />
+        <div className="flex-1" style={{ background: "#F9A825" }} />
+        <div className="flex-1" style={{ background: "#1B5E20" }} />
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start">
+      <div className="grid grid-cols-1 lg:grid-cols-2 min-h-[600px]">
 
-          {/* ═══════════════════════════════
-              LEFT — Text + Quote (prominent)
-          ═══════════════════════════════ */}
-          <motion.div
-            initial={{ opacity: 0, x: -40 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.7 }}
-            className="flex flex-col gap-6"
+        {/* ── LEFT: Colourful image collage ── */}
+        <div className="relative overflow-hidden bg-[#1A237E] min-h-[420px] lg:min-h-0">
+
+          {/* diagonal clip for desktop */}
+          <div
+            className="absolute inset-0 hidden lg:block"
+            style={{ clipPath: "polygon(0 0, 92% 0, 100% 100%, 0 100%)" }}
           >
-            <div>
-              <span className="section-label">Who We Are</span>
-              <h2 className="section-heading mb-6">
-                A Legacy of Learning in the Heart of Bargur
-              </h2>
-
-              <div className="space-y-4 text-textmuted leading-relaxed text-justify">
-                <p>
-                  Founded over three decades ago, St. Kanakadasa Educational
-                  Institutions has grown into one of Tamil Nadu's most respected
-                  academic centres. Situated in the serene environs of Ammeri,
-                  Bargur, our campus nurtures holistic growth - intellectual,
-                  moral, and spiritual - in every student.
-                </p>
-                <p>
-                  We bring together a team of highly qualified, dedicated faculty
-                  who use modern pedagogical techniques alongside digital smart
-                  classrooms to make learning engaging and effective. Our dual
-                  board offering - CBSE Senior Secondary and Matriculation Higher
-                  Secondary - ensures every student has the right academic pathway.
-                </p>
-                <p>
-                  Rooted in spiritual discipline and guided by the principles of
-                  Sri Kanakadasa, our institution fosters values of compassion,
-                  integrity, and excellence. From Pre-KG to Class XII, every child
-                  here is a future leader in the making.
-                </p>
+            <div className="grid grid-cols-2 h-full">
+              <div className="relative overflow-hidden">
+                <img src={img1} alt="Campus" className="w-full h-full object-cover ken-burns" />
+                <div className="absolute inset-0" style={{ background: "linear-gradient(180deg, rgba(26,35,126,0.3) 0%, transparent 100%)" }} />
+              </div>
+              <div className="flex flex-col">
+                <div className="relative flex-1 overflow-hidden">
+                  <img src={img2} alt="Assembly" className="w-full h-full object-cover ken-burns-alt" />
+                </div>
+                <div className="relative flex-1 overflow-hidden">
+                  <img src={img3} alt="Awards" className="w-full h-full object-cover ken-burns" />
+                </div>
               </div>
             </div>
-
-            {/* ── Quote Card — full-width on the left ── */}
-            <div className="relative bg-[#1A472A] rounded-2xl p-6 shadow-xl border-l-4 border-[#E63946] overflow-hidden">
-              {/* Decorative quote mark background */}
-              <div className="absolute -top-4 -right-4 text-white/5 font-heading font-bold text-[10rem] leading-none select-none pointer-events-none">"</div>
-              <Quote className="text-[#F4A261] mb-3" size={28} />
-              <p className="font-heading text-lg md:text-xl italic text-white font-medium leading-relaxed mb-3">
-                "Intelligence plus character is the goal of true education."
-              </p>
-              <div className="flex items-center gap-3">
-                <div className="h-px w-8 bg-[#E63946]" />
-                <p className="text-sm text-white/70 font-semibold font-sans tracking-wide">Martin Luther King Jr.</p>
-              </div>
-            </div>
-
-            <a
-              href="#"
-              onClick={(e) => e.preventDefault()}
-              className="inline-flex items-center gap-2 bg-[#E63946] text-white font-semibold px-6 py-3 rounded-xl hover:brightness-110 transition-all duration-300 shadow-md hover:-translate-y-0.5 group w-fit cursor-default"
-            >
-              Read Our Full Story
-              <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform duration-200" />
-            </a>
-          </motion.div>
-
-          {/* ═══════════════════════════════
-              RIGHT — Image mosaic
-          ═══════════════════════════════ */}
-          <div className="relative w-full mt-10 lg:mt-0">
-            {/* Mobile full-bleed dark green background */}
-            <div className="absolute top-[-4rem] bottom-[-8rem] w-[200%] -left-[50%] bg-[#1A472A] -z-10 lg:hidden" />
-
-            <motion.div
-            initial={{ opacity: 0, x: 40 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.7, delay: 0.2 }}
-            className="grid grid-cols-2 gap-4"
-          >
-            {images.map((img, i) => (
-              <div
-                key={i}
-                className="overflow-hidden rounded-2xl shadow-xl ring-2 ring-white/20 hover:-translate-y-1 hover:shadow-2xl transition-all duration-300"
-              >
-                <img
-                  src={img.src}
-                  alt={img.alt}
-                  className="w-full h-48 object-cover hover:scale-105 transition-transform duration-500"
-                />
-              </div>
-            ))}
-            {/* Badge */}
-            <div className="col-span-2 flex justify-center mt-2">
-              <div className="bg-[#E63946] text-white text-xs font-bold px-5 py-2 rounded-full shadow-lg tracking-widest uppercase font-sans">
-                ★ 20+ Years of Excellence
-              </div>
-            </div>
-
-            {/* Unique Component to fill the space */}
-            <div className="col-span-2 mt-6 bg-white/5 border border-white/10 rounded-3xl p-6 md:p-8 backdrop-blur-sm shadow-2xl hover:bg-white/10 transition-colors duration-300">
-              <h3 className="text-white font-heading font-bold text-xl mb-6 flex items-center gap-3">
-                <div className="w-10 h-0.5 bg-[#F4A261]" />
-                Pillars of Excellence
-              </h3>
-              <div className="space-y-6">
-                {[
-                  { title: "Academic Rigor", desc: "Consistently achieving 100% board results with top district ranks.", icon: BookOpen },
-                  { title: "Moral Values", desc: "Rooted deeply in the spiritual teachings of Sri Kanakadasa.", icon: HeartHandshake },
-                  { title: "Modern Facilities", desc: "Smart classrooms, advanced labs, and robust digital infrastructure.", icon: MonitorPlay },
-                ].map((item, idx) => {
-                  const Icon = item.icon;
-                  return (
-                    <div key={idx} className="flex gap-4 items-start group cursor-default">
-                      <div className="w-11 h-11 rounded-xl bg-[#F4A261]/20 flex items-center justify-center shrink-0 group-hover:bg-[#F4A261] group-hover:scale-110 transition-all duration-300 shadow-inner">
-                        <Icon size={20} className="text-[#F4A261] group-hover:text-white transition-colors" />
-                      </div>
-                      <div className="flex-1">
-                        <h4 className="text-white font-bold font-sans text-sm md:text-base tracking-wide mb-1">{item.title}</h4>
-                        <p className="text-white/70 text-xs md:text-sm font-sans leading-relaxed">{item.desc}</p>
-                      </div>
-                    </div>
-                  );
-                })}
-              </div>
-            </div>
-          </motion.div>
+            {/* gradient over images */}
+            <div className="absolute inset-0" style={{ background: "linear-gradient(135deg, rgba(26,35,126,0.55) 0%, transparent 60%)" }} />
           </div>
 
+          {/* Mobile: simple image */}
+          <div className="lg:hidden h-64 relative overflow-hidden">
+            <img src={img1} alt="Campus" className="w-full h-full object-cover ken-burns" />
+            <div className="absolute inset-0 bg-[#1A237E]/50" />
+          </div>
+
+          {/* Floating badge — CBSE board trust signal */}
+          <motion.div
+            initial={{ scale: 0, rotate: -10 }}
+            whileInView={{ scale: 1, rotate: 0 }}
+            viewport={{ once: true }}
+            transition={{ type: "spring", delay: 0.4 }}
+            className="absolute bottom-8 left-8 z-10 float-badge"
+          >
+            <div className="bg-[#FF6F00] text-white rounded-2xl px-5 py-3 shadow-2xl flex items-center gap-3">
+              <Star className="fill-white" size={20} />
+              <div>
+                <p className="text-sm font-black leading-tight">Bargur&apos;s</p>
+                <p className="text-xs uppercase tracking-widest opacity-80">Trusted School</p>
+              </div>
+            </div>
+          </motion.div>
+
+          {/* Extra photos bottom-right (desktop) */}
+          <div className="absolute bottom-4 right-8 hidden lg:flex gap-2 z-10">
+            {[img4, img5].map((src, i) => (
+              <div key={i} className="w-20 h-20 rounded-xl overflow-hidden border-2 border-white/40 shadow-lg hover:scale-110 transition-transform duration-300">
+                <img src={src} alt="" className="w-full h-full object-cover" />
+              </div>
+            ))}
+          </div>
         </div>
+
+        {/* ── RIGHT: Text + Stats ── */}
+        <motion.div
+          initial={{ opacity: 0, x: 40 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7 }}
+          className="flex flex-col justify-center px-8 sm:px-12 lg:px-16 py-16 bg-white relative"
+        >
+          {/* Decorative dot cluster */}
+          <div className="absolute top-8 right-8 opacity-20 pointer-events-none"
+            style={{
+              backgroundImage: "radial-gradient(circle, #FF6F00 1.5px, transparent 1.5px)",
+              backgroundSize: "12px 12px",
+              width: 80, height: 80,
+            }}
+          />
+
+          <p className="section-label">Who We Are</p>
+          <h2 className="font-heading text-3xl sm:text-4xl font-black leading-tight mb-5" style={{ color: "#1A237E" }}>
+            A Legacy of Learning<br />
+            in the Heart of{" "}
+            <span className="text-gradient-saffron animated-underline">Bargur</span>
+          </h2>
+          <p className="text-gray-600 leading-relaxed text-sm sm:text-base mb-8 max-w-lg">
+            Offering CBSE &amp; Matric streams from Pre-KG to Class XII in Bargur, rooted in discipline, innovation, and the spirit of Sri Kanakadasa.
+          </p>
+
+          {/* Animated counter stats */}
+          <div className="grid grid-cols-2 gap-4 mb-8">
+            {stats.map((s, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: i * 0.1 }}
+                className="rounded-2xl p-4 text-center hover:-translate-y-1 transition-transform duration-300"
+                style={{
+                  background: [
+                    "linear-gradient(135deg, #1A237E15, #1A237E05)",
+                    "linear-gradient(135deg, #FF6F0015, #FF6F0005)",
+                    "linear-gradient(135deg, #C6282815, #C6282805)",
+                    "linear-gradient(135deg, #1B5E2015, #1B5E2005)",
+                  ][i],
+                  border: `1px solid ${["#1A237E30","#FF6F0030","#C6282830","#1B5E2030"][i]}`,
+                }}
+              >
+                <p className="text-3xl font-black font-heading leading-none"
+                  style={{ color: ["#1A237E","#FF6F00","#C62828","#1B5E20"][i] }}>
+                  <Counter end={s.end} suffix={s.suffix} />
+                </p>
+                <p className="text-xs uppercase tracking-widest text-gray-500 font-sans mt-1">{s.label}</p>
+              </motion.div>
+            ))}
+          </div>
+
+          <Link
+            to="/about"
+            className="inline-flex items-center gap-2 font-bold px-7 py-3.5 rounded-xl shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300 text-white w-fit text-sm"
+            style={{ background: "linear-gradient(135deg, #1A237E, #0277BD)" }}
+          >
+            Our Full Story
+            <ArrowRight size={17} />
+          </Link>
+        </motion.div>
+      </div>
+
+      {/* ── BOTTOM coloured bar ── */}
+      <div className="h-1.5 flex">
+        <div className="flex-1" style={{ background: "#1B5E20" }} />
+        <div className="flex-1" style={{ background: "#F9A825" }} />
+        <div className="flex-1" style={{ background: "#C62828" }} />
+        <div className="flex-1" style={{ background: "#FF6F00" }} />
+        <div className="flex-1" style={{ background: "#1A237E" }} />
       </div>
     </section>
   );

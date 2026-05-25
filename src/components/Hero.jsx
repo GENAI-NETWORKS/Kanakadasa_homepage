@@ -1,234 +1,242 @@
-import { motion } from "framer-motion";
-import { ArrowRight, ChevronDown, GraduationCap, BookOpen, Award, Users } from "lucide-react";
-import heroBg from "../assets/1.jpeg";
+import { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import {
+  ArrowRight, ChevronDown, ChevronLeft, ChevronRight,
+  Trophy, BookOpen, GraduationCap, Sparkles, Users,
+} from "lucide-react";
 import img1 from "../assets/1.jpeg";
 import img2 from "../assets/4.jpeg";
 import img3 from "../assets/3.jpeg";
-import img4 from "../assets/7.jpeg";
+import img4 from "../assets/18.jpeg";
+import img5 from "../assets/23.jpeg";
 
-const stats = [
-  { val: "20+",     label: "Years of Excellence", icon: Award },
-  { val: "Pre-KG",  label: "to Class XII",        icon: BookOpen },
-  { val: "CBSE",    label: "& Matric Boards",     icon: GraduationCap },
-  { val: "NEET",    label: "/ JEE Coaching",      icon: Users },
+const slides = [
+  {
+    img: img1,
+    TagIcon: Trophy,
+    tag: "20+ Years of Excellence",
+    title: "Shaping Tomorrow's",
+    highlight: "Leaders Today",
+    sub: "From Pre-KG to Class XII · CBSE & Matric Boards",
+    accent: "#FF6F00",
+  },
+  {
+    img: img2,
+    TagIcon: BookOpen,
+    tag: "Dual Board Affiliation",
+    title: "CBSE & Matric",
+    highlight: "Your Choice",
+    sub: "World-class education rooted in Indian values",
+    accent: "#F9A825",
+  },
+  {
+    img: img3,
+    TagIcon: GraduationCap,
+    tag: "Competitive Edge",
+    title: "NEET / JEE",
+    highlight: "Integrated Coaching",
+    sub: "Preparing future doctors and engineers",
+    accent: "#FF6F00",
+  },
+  {
+    img: img4,
+    TagIcon: Sparkles,
+    tag: "Holistic Development",
+    title: "Academics · Arts",
+    highlight: "Sports & Values",
+    sub: "Every child's talent nurtured with care",
+    accent: "#F9A825",
+  },
+  {
+    img: img5,
+    TagIcon: Users,
+    tag: "Student Leadership",
+    title: "Confident &",
+    highlight: "Future-Ready",
+    sub: "Character building from day one",
+    accent: "#FF6F00",
+  },
 ];
 
-export default function Hero() {
-  const scrollToAbout = () =>
-    document.getElementById("about")?.scrollIntoView({ behavior: "smooth" });
+/* Ticker + Navbar together = 36 + ~80 = 116px — hero must clear that */
+const HEADER_OFFSET = 116;
 
-  const scrollToAdmission = () =>
-    document.getElementById("admission")?.scrollIntoView({ behavior: "smooth" });
+export default function Hero() {
+  const [current, setCurrent] = useState(0);
+  const [dir, setDir] = useState(1);
+
+  useEffect(() => {
+    const t = setInterval(() => {
+      setDir(1);
+      setCurrent((c) => (c + 1) % slides.length);
+    }, 5000);
+    return () => clearInterval(t);
+  }, []);
+
+  const go  = (i) => { setDir(i > current ? 1 : -1); setCurrent(i); };
+  const prev = () => { setDir(-1); setCurrent((c) => (c - 1 + slides.length) % slides.length); };
+  const next = () => { setDir(1);  setCurrent((c) => (c + 1) % slides.length); };
+
+  const slide = slides[current];
+
+  const scrollToSection = (id) =>
+    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
 
   return (
     <section
       id="home"
-      className="relative w-full min-h-[100dvh] flex items-center overflow-hidden bg-[#0D2818]"
+      className="relative w-full flex flex-col overflow-hidden bg-[#0D1B6E]"
+      style={{ minHeight: "100dvh" }}
     >
-      {/* ── Background photo ── */}
-      <div
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: `url(${heroBg})` }}
-      />
-      {/* ── Dark green overlay ── */}
-      <div className="absolute inset-0 bg-gradient-to-r from-[#0D2818] via-[#0D2818]/90 to-transparent" />
+      {/* ── Carousel area ── */}
+      <div className="relative flex-1 flex items-center" style={{ paddingTop: HEADER_OFFSET }}>
 
-      {/* ── Green glow blob bottom-left ── */}
-      <div className="absolute -bottom-32 -left-32 w-[28rem] h-[28rem] rounded-full bg-[#2D6A4F]/40 blur-3xl pointer-events-none" />
-      <div className="absolute top-0 right-0 w-[20rem] h-[20rem] rounded-full bg-[#E63946]/10 blur-3xl pointer-events-none" />
-
-      {/* ── Main layout: left text | right images ── */}
-      <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-0 md:min-h-[100dvh] flex items-center">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center w-full">
-
-          {/* ════════════════════════════════
-              LEFT — Text Content
-          ════════════════════════════════ */}
+        {/* Slide images */}
+        <AnimatePresence mode="popLayout" custom={dir}>
           <motion.div
-            initial={{ opacity: 0, x: -40 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
-            className="text-left"
+            key={current}
+            custom={dir}
+            variants={{
+              enter:  (d) => ({ x: d > 0 ? "100%" : "-100%", opacity: 0 }),
+              center: { x: 0, opacity: 1 },
+              exit:   (d) => ({ x: d > 0 ? "-100%" : "100%", opacity: 0 }),
+            }}
+            initial="enter"
+            animate="center"
+            exit="exit"
+            transition={{ duration: 0.7, ease: [0.4, 0, 0.2, 1] }}
+            className="absolute inset-0"
           >
+            <img
+              src={slide.img}
+              alt={slide.title}
+              className="w-full h-full object-cover ken-burns"
+            />
+            {/* Strong left-to-transparent overlay so text is always readable */}
+            <div className="absolute inset-0 bg-gradient-to-r from-[#0D1B6E]/95 via-[#0D1B6E]/75 to-[#0D1B6E]/30" />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#0D1B6E]/70 via-transparent to-transparent" />
+          </motion.div>
+        </AnimatePresence>
 
-            {/* Heading */}
-            <h1 className="font-heading text-white leading-[1.15] mb-6">
-              <span className="block text-3xl sm:text-4xl md:text-5xl font-light mb-1 opacity-80">
-                Welcome to
-              </span>
-              <span className="block text-4xl sm:text-5xl md:text-6xl font-bold text-[#F4A261]">
-                St. Kanakadasa
-              </span>
-              <span className="block text-2xl sm:text-3xl md:text-4xl font-normal text-white/90 mt-1">
-                Educational Institutions
-              </span>
-            </h1>
+        {/* Decorative glow blob */}
+        <div
+          className="absolute top-1/3 right-1/4 w-64 h-64 rounded-full opacity-10 blur-3xl pointer-events-none transition-colors duration-1000"
+          style={{ background: slide.accent }}
+        />
 
+        {/* ── Text content ── */}
+        <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+          <div className="max-w-2xl">
 
+            {/* Tag pill — always saffron background so icon + text always visible */}
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={`tag-${current}`}
+                initial={{ opacity: 0, y: -20 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: 20 }}
+                transition={{ duration: 0.4 }}
+                className="mb-6"
+              >
+                <span
+                  className="inline-flex items-center gap-2 text-white font-bold text-xs px-5 py-2 rounded-full uppercase tracking-widest"
+                  style={{ background: "#FF6F00" }}
+                >
+                  <slide.TagIcon size={13} strokeWidth={2.5} />
+                  {slide.tag}
+                </span>
+              </motion.div>
+            </AnimatePresence>
 
-            {/* Tagline */}
-            <p className="text-white/70 text-base sm:text-lg leading-relaxed mb-8 font-sans max-w-lg">
-              Holistic Learning · Future-Ready Education · Rooted in Values
-            </p>
-
-            {/* Stats row */}
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-10">
-              {stats.map((s) => {
-                const Icon = s.icon;
-                return (
-                  <div
-                    key={s.val}
-                    className="flex flex-col items-start gap-1 border-l-2 border-[#F4A261]/40 pl-3"
+            {/* Heading — white base, accent highlight always warm (saffron/gold) */}
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={`title-${current}`}
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -20 }}
+                transition={{ duration: 0.5, delay: 0.1 }}
+              >
+                <h1 className="font-heading leading-tight mb-4">
+                  <span className="block text-white text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-light drop-shadow-lg">
+                    {slide.title}
+                  </span>
+                  {/* Highlight: always saffron/gold so it shows over dark bg */}
+                  <span
+                    className="block text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black drop-shadow-lg"
+                    style={{ color: slide.accent }}
                   >
-                    <Icon size={16} className="text-[#F4A261] mb-0.5" strokeWidth={1.8} />
-                    <p className="text-xl sm:text-2xl font-bold text-[#F4A261] font-heading leading-none">
-                      {s.val}
-                    </p>
-                    <p className="text-[10px] text-white/50 uppercase tracking-widest leading-tight font-sans">
-                      {s.label}
-                    </p>
-                  </div>
-                );
-              })}
-            </div>
+                    {slide.highlight}
+                  </span>
+                </h1>
+                <p className="text-white/80 text-lg font-sans mt-4 mb-8 drop-shadow">
+                  {slide.sub}
+                </p>
+              </motion.div>
+            </AnimatePresence>
 
-            {/* CTA Buttons (Desktop) */}
-            <div className="hidden lg:flex flex-row gap-4 mt-2">
+            {/* Single CTA — "Explore School" only */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.3 }}
+              className="flex flex-wrap gap-4"
+            >
               <button
-                onClick={scrollToAdmission}
-                className="group inline-flex items-center justify-center gap-2 bg-[#E63946] hover:bg-[#c0272f] text-white font-bold px-7 py-3.5 rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-0.5 font-sans text-sm sm:text-base"
+                onClick={() => scrollToSection("about")}
+                className="inline-flex items-center gap-2 text-white font-bold px-8 py-4 rounded-xl shadow-2xl hover:-translate-y-1 transition-all duration-300 text-base"
+                style={{ background: "linear-gradient(135deg, #FF6F00, #F9A825)" }}
               >
-                Admissions Open
-                <ArrowRight size={17} className="group-hover:translate-x-1 transition-transform" />
+                Explore School
+                <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
               </button>
               <button
-                onClick={scrollToAbout}
-                className="group inline-flex items-center justify-center gap-2 border border-white/30 text-white hover:bg-white/10 font-semibold px-7 py-3.5 rounded-lg transition-all duration-300 font-sans text-sm sm:text-base"
+                onClick={() => scrollToSection("admission")}
+                className="inline-flex items-center gap-2 border-2 border-white/40 text-white font-semibold px-8 py-4 rounded-xl hover:bg-white/10 transition-all duration-300 text-base backdrop-blur-sm"
               >
-                Learn More
-                <ChevronDown size={18} className="group-hover:translate-y-1 transition-transform" />
+                Admissions
+                <ChevronDown size={18} />
               </button>
-            </div>
-          </motion.div>
+            </motion.div>
 
-          {/* ════════════════════════════════
-              RIGHT — Image Mosaic with Pattern
-          ════════════════════════════════ */}
-          <motion.div
-            initial={{ opacity: 0, x: 40 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.9, delay: 0.2, ease: "easeOut" }}
-            className="relative flex flex-col items-center justify-center w-full"
-          >
-            {/* Outer decorative ring */}
-            <div className="absolute inset-0 rounded-[2.5rem] border border-[#F4A261]/20 pointer-events-none" />
-
-            {/* ── Unique staggered image grid ── */}
-            <div className="relative w-full max-w-xl mx-auto">
-
-              {/* Large top-left image */}
-              <motion.div
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.7, delay: 0.4 }}
-                className="absolute top-0 left-0 w-[55%] aspect-[4/3] rounded-2xl overflow-hidden ring-4 ring-[#F4A261]/30 shadow-2xl z-10"
-              >
-                <img src={img1} alt="School assembly" className="w-full h-full object-cover" />
-                <div className="absolute inset-0 bg-gradient-to-b from-transparent to-[#0D2818]/30" />
-              </motion.div>
-
-              {/* Top-right smaller image — offset down */}
-              <motion.div
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.7, delay: 0.55 }}
-                className="absolute top-[8%] right-0 w-[42%] aspect-square rounded-2xl overflow-hidden ring-4 ring-[#E63946]/30 shadow-2xl z-20"
-              >
-                <img src={img2} alt="Students saluting" className="w-full h-full object-cover" />
-              </motion.div>
-
-              {/* Bottom-left — offset up */}
-              <motion.div
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.7, delay: 0.7 }}
-                className="absolute bottom-0 left-[8%] w-[42%] aspect-square rounded-2xl overflow-hidden ring-4 ring-[#2D6A4F]/50 shadow-2xl z-20"
-              >
-                <img src={img3} alt="School campus" className="w-full h-full object-cover" />
-              </motion.div>
-
-              {/* Bottom-right large image */}
-              <motion.div
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.7, delay: 0.85 }}
-                className="absolute bottom-0 right-0 w-[50%] aspect-[4/3] rounded-2xl overflow-hidden ring-4 ring-[#F4A261]/20 shadow-2xl z-10"
-              >
-                <img src={img4} alt="Cultural performance" className="w-full h-full object-cover" />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#0D2818]/40 to-transparent" />
-              </motion.div>
-
-              {/* Spacer to hold container height */}
-              <div className="relative" style={{ paddingTop: "80%" }} />
-
-              {/* Floating badge — centre overlap */}
-              <motion.div
-                initial={{ opacity: 0, scale: 0 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.5, delay: 1.1, type: "spring" }}
-                className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-30"
-              >
-                <div className="bg-[#1A472A] border-2 border-[#F4A261] text-white rounded-full w-20 h-20 flex flex-col items-center justify-center shadow-xl">
-                  <p className="text-lg font-bold text-[#F4A261] font-heading leading-none">20+</p>
-                  <p className="text-[9px] uppercase tracking-widest text-white/80 text-center leading-tight font-sans">
-                    Yrs of<br />Excellence
-                  </p>
-                </div>
-              </motion.div>
-
-              {/* Decorative dot grid behind images */}
-              <div
-                className="absolute -bottom-6 -right-6 w-28 h-28 opacity-30 pointer-events-none"
-                style={{
-                  backgroundImage: "radial-gradient(circle, #F4A261 1.5px, transparent 1.5px)",
-                  backgroundSize: "10px 10px",
-                }}
-              />
-              <div
-                className="absolute -top-6 -left-6 w-24 h-24 opacity-20 pointer-events-none"
-                style={{
-                  backgroundImage: "radial-gradient(circle, #E63946 1.5px, transparent 1.5px)",
-                  backgroundSize: "10px 10px",
-                }}
-              />
-            </div>
-
-            {/* CTA Buttons (Mobile) */}
-            <div className="flex lg:hidden flex-col sm:flex-row gap-4 w-full mt-12 px-2 items-start">
-              <button
-                onClick={(e) => e.preventDefault()}
-                className="group inline-flex items-center justify-center gap-2 bg-[#E63946] hover:bg-[#c0272f] text-white font-bold px-7 py-3.5 rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl font-sans text-sm sm:text-base w-fit"
-              >
-                Admissions Open
-                <ArrowRight size={17} className="group-hover:translate-x-1 transition-transform" />
-              </button>
-              <button
-                onClick={(e) => e.preventDefault()}
-                className="group inline-flex items-center justify-center gap-2 border border-white/30 text-white hover:bg-white/10 font-semibold px-7 py-3.5 rounded-lg transition-all duration-300 font-sans text-sm sm:text-base w-fit"
-              >
-                Learn More
-                <ChevronDown size={18} className="group-hover:translate-y-1 transition-transform" />
-              </button>
-            </div>
-          </motion.div>
-
+          </div>
         </div>
+
+        {/* Slide indicators */}
+        <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex items-center gap-2 z-10">
+          {slides.map((_, i) => (
+            <button
+              key={i}
+              onClick={() => go(i)}
+              className="transition-all duration-300 rounded-full"
+              style={{
+                width: i === current ? "2rem" : "0.5rem",
+                height: "0.5rem",
+                background: i === current ? "#FF6F00" : "rgba(255,255,255,0.35)",
+              }}
+            />
+          ))}
+        </div>
+
+        {/* Prev / Next */}
+        <button
+          onClick={prev}
+          className="absolute left-4 top-1/2 -translate-y-1/2 z-10 w-10 h-10 rounded-full bg-white/10 border border-white/20 backdrop-blur-sm flex items-center justify-center text-white hover:bg-white/20 transition-all"
+        >
+          <ChevronLeft size={20} />
+        </button>
+        <button
+          onClick={next}
+          className="absolute right-4 top-1/2 -translate-y-1/2 z-10 w-10 h-10 rounded-full bg-white/10 border border-white/20 backdrop-blur-sm flex items-center justify-center text-white hover:bg-white/20 transition-all"
+        >
+          <ChevronRight size={20} />
+        </button>
       </div>
 
-      {/* ── Bottom wave ── */}
-      <div className="absolute bottom-0 left-0 right-0 pointer-events-none">
+      {/* Bottom wave */}
+      <div className="absolute bottom-0 left-0 right-0 pointer-events-none z-10">
         <svg viewBox="0 0 1440 60" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" className="w-full h-12 md:h-16">
-          <path d="M0,30 C360,60 1080,0 1440,30 L1440,60 L0,60 Z" fill="#FFF8F0" />
+          <path d="M0,30 C360,60 1080,0 1440,30 L1440,60 L0,60 Z" fill="#ffffff" />
         </svg>
       </div>
     </section>
