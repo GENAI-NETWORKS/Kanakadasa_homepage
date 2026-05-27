@@ -1,6 +1,7 @@
 import { Helmet } from 'react-helmet-async';
 import PageHero from '../components/PageHero';
 import FacilitiesShowcase from '../components/FacilitiesShowcase';
+import pageBg from '../assets/12.jpeg';
 import { 
   Bus, Users, BookOpen, FlaskConical, MonitorPlay, 
   Sparkles, Leaf, Calculator, Gamepad2, Music, ShieldCheck, 
@@ -105,7 +106,7 @@ export default function FacilitiesPage() {
       <PageHero 
         title="Facilities & Infrastructure" 
         description="A comprehensive and secure environment designed to facilitate holistic learning and personal growth."
-        imagePlaceholder="https://images.unsplash.com/photo-1562774053-701939374585?q=80&w=2086&auto=format&fit=crop"
+        imagePlaceholder={pageBg}
       />
 
       <FacilitiesShowcase />

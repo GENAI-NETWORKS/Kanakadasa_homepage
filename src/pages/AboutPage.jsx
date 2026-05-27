@@ -3,6 +3,7 @@ import PageHero from '../components/PageHero';
 import FacultyDetails from '../components/FacultyDetails';
 import AchievementsDetails from '../components/AchievementsDetails';
 import VisionaryLeadership from '../components/VisionaryLeadership';
+import pageBg from '../assets/25.jpeg';
 import { Target, Lightbulb, Heart, Quote, Star, Users, Brain, Shield, Sparkles, BookOpen, CheckCircle } from 'lucide-react';
 
 export default function AboutPage() {
@@ -16,7 +17,7 @@ export default function AboutPage() {
       <PageHero 
         title="About Our Institution" 
         description="A legacy of academic excellence, value-based education, and holistic development."
-        imagePlaceholder="https://images.unsplash.com/photo-1577896851231-70ef18881754?q=80&w=2070&auto=format&fit=crop"
+        imagePlaceholder={pageBg}
       />
 
       {/* Inspirational Quotes Section from Writeup */}

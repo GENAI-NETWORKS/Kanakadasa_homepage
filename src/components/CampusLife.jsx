@@ -1,10 +1,10 @@
 import { motion } from "framer-motion";
-import img1 from "../assets/1.jpeg";
+import img1 from "../assets/2.jpeg";
 import img2 from "../assets/6.jpeg";
 import img3 from "../assets/7.jpeg";
 import img4 from "../assets/10.jpeg";
 import img5 from "../assets/18.jpeg";
-import img6 from "../assets/23.jpeg";
+import img6 from "../assets/26.jpeg";
 import img7 from "../assets/31.jpeg";
 import img8 from "../assets/13.jpeg";
 

@@ -6,7 +6,7 @@ import {
 } from "lucide-react";
 import { Link } from "react-router-dom";
 
-import imgAssembly from "../assets/1.jpeg";
+import imgAssembly from "../assets/WhatsApp Image 2026-05-26 at 7.25.43 AM.jpeg";
 
 const stages = [
   {

@@ -3,6 +3,7 @@ import PageHero from '../components/PageHero';
 import CurriculumDetails from '../components/CurriculumDetails';
 import ExtraCurricularDetails from '../components/ExtraCurricularDetails';
 import ExaminationSystemDetails from '../components/ExaminationSystemDetails';
+import pageBg from '../assets/17.jpeg';
 import { BookOpen, Star, ShieldCheck, Target, PenTool, Layout, CheckCircle, 
   Laptop, FlaskConical, Languages, Trophy, 
   BrainCircuit, Users, Activity, Sparkles
@@ -19,7 +20,7 @@ export default function AcademicsPage() {
       <PageHero 
         title="Academic Excellence" 
         description="Fostering intellectual growth through dynamic learning methodologies and comprehensive assessment systems."
-        imagePlaceholder="https://images.unsplash.com/photo-1509062522246-3755977927d7?q=80&w=2070&auto=format&fit=crop"
+        imagePlaceholder={pageBg}
       />
 
       {/* Academic Overview */}

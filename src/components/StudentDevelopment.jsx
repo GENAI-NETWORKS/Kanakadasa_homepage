@@ -1,10 +1,10 @@
 import { motion } from "framer-motion";
 import img1 from "../assets/7.jpeg";
-import img2 from "../assets/31.jpeg";
+import img2 from "../assets/45.jpeg";
 import img3 from "../assets/41.jpeg";
-import img4 from "../assets/22.jpeg";
-import img5 from "../assets/42.jpeg";
-import img6 from "../assets/43.jpeg";
+import img4 from "../assets/23.jpeg";
+import img5 from "../assets/36.jpeg";
+import img6 from "../assets/35.jpeg";
 
 const activities = [
   { img: img1, label: "Classical Dance", color: "#C62828", desc: "Preserving cultural heritage through disciplined training in traditional dance forms, enhancing grace and focus." },

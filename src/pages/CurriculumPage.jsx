@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Helmet } from 'react-helmet-async';
 import PageHero from '../components/PageHero';
+import pageBg from '../assets/14.jpeg';
 import { 
   CheckCircle, GraduationCap, 
   FlaskConical, BookOpen, Sprout, Target, Activity, Palette, Gamepad2, BrainCircuit 
@@ -113,7 +114,7 @@ export default function CurriculumPage() {
       <PageHero 
         title="Curriculum & Co-Curriculars" 
         description="A structured educational framework designed to ensure balanced academic development, skill enhancement, and holistic learning."
-        imagePlaceholder="https://images.unsplash.com/photo-1509062522246-3755977927d7?q=80&w=2070&auto=format&fit=crop"
+        imagePlaceholder={pageBg}
       />
 
       {/* Curriculum Levels (Tabs) */}

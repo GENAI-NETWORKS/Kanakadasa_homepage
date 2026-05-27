@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { CheckCircle2, ShieldCheck, GraduationCap, Users, Bus, Trophy } from "lucide-react";
 
-import stickyImg from "../assets/1.jpeg"; // We'll use one majestic image for the sticky side
+import stickyImg from "../assets/gate.jpeg"; // We'll use one majestic image for the sticky side
 
 const features = [
   { 

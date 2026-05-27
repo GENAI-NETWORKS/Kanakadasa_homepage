@@ -3,11 +3,11 @@ import { motion } from "framer-motion";
 import { ArrowRight, Star } from "lucide-react";
 import { Link } from "react-router-dom";
 
-import img1 from "../assets/2.jpeg";
-import img2 from "../assets/6.jpeg";
-import img3 from "../assets/10.jpeg";
-import img4 from "../assets/18.jpeg";
-import img5 from "../assets/23.jpeg";
+import img1 from "../assets/WhatsApp Image 2026-05-26 at 7.25.42 AM (1).jpeg";
+import img2 from "../assets/WhatsApp Image 2026-05-26 at 7.25.43 AM (1).jpeg";
+import img3 from "../assets/26.jpeg";
+import img4 from "../assets/WhatsApp Image 2026-05-26 at 7.25.43 AM (1).jpeg";
+import img5 from "../assets/14.jpeg";
 
 function Counter({ end, suffix = "", duration = 2000 }) {
   const [count, setCount] = useState(0);

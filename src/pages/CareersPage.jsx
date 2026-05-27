@@ -1,7 +1,7 @@
 import { Helmet } from 'react-helmet-async';
 import PageHero from '../components/PageHero';
 import CareersSection from '../components/CareersSection';
-
+import pageBg from '../assets/15.jpeg';
 
 export default function CareersPage() {
   return (
@@ -14,7 +14,7 @@ export default function CareersPage() {
       <PageHero 
         title="Careers" 
         description="Join our team of dedicated educators and experience a professional environment focused on innovation and growth."
-        imagePlaceholder="https://images.unsplash.com/photo-1577896851231-70ef18881754?q=80&w=2070&auto=format&fit=crop"
+        imagePlaceholder={pageBg}
       />
 
 

@@ -1,5 +1,6 @@
 import { MapPin, Phone, Mail } from "lucide-react";
 import { Link } from "react-router-dom";
+import logo from "../assets/logo.png";
 
 const FacebookIcon = ({ size }) => (
   <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -39,9 +40,11 @@ export default function Footer() {
           {/* Col 1: Brand */}
           <div>
             <div className="flex items-center gap-3 mb-6">
-              <div className="w-12 h-12 rounded-full bg-white flex items-center justify-center shadow-md">
-                <span className="text-primary font-heading font-bold text-lg leading-none">SKS</span>
-              </div>
+              <img 
+                src={logo} 
+                alt="St. Kanakadasa Logo" 
+                className="w-12 h-12 object-contain bg-white rounded-full p-0.5"
+              />
               <div>
                 <p className="font-heading font-bold text-white text-lg leading-tight">
                   St. Kanakadasa

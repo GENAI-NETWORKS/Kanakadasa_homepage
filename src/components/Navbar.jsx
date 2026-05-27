@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
+import logo from "../assets/logo.png";
 
 const navLinks = [
   { label: "Home",       href: "/" },
@@ -51,14 +52,11 @@ export default function Navbar() {
             onClick={() => window.scrollTo(0, 0)}
             className="flex items-center gap-3 flex-shrink-0"
           >
-            <div
-              className="w-10 h-10 md:w-12 md:h-12 rounded-full flex items-center justify-center shadow-md"
-              style={{ background: "#1A237E" }}
-            >
-              <span className="text-white font-heading font-bold text-sm md:text-base leading-none">
-                SKS
-              </span>
-            </div>
+            <img 
+              src={logo} 
+              alt="St. Kanakadasa Logo" 
+              className="w-10 h-10 md:w-12 md:h-12 object-contain"
+            />
             <div className="hidden sm:block text-left">
               <p
                 className={`font-heading font-bold text-sm md:text-base leading-tight transition-colors duration-300 ${

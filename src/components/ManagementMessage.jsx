@@ -2,6 +2,9 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronDown, ChevronUp } from "lucide-react";
 
+import imgDirector from "../assets/46.jpeg";
+import imgCorrespondent from "../assets/45.jpeg";
+
 export default function ManagementMessage() {
   const [directorExpanded, setDirectorExpanded] = useState(false);
   const [correspondentExpanded, setCorrespondentExpanded] = useState(false);
@@ -20,7 +23,7 @@ export default function ManagementMessage() {
           >
             <div className="w-48 h-48 lg:w-64 lg:h-64 rounded-full border-4 border-accent p-1 bg-white shadow-xl">
               <img
-                src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&q=80&auto=format&fit=crop"
+                src={imgDirector}
                 alt="Mrs. Elakkiya Elampuranam - Director"
                 className="w-full h-full object-cover rounded-full"
               />
@@ -101,7 +104,7 @@ export default function ManagementMessage() {
           >
             <div className="w-48 h-48 lg:w-64 lg:h-64 rounded-full border-4 border-secondary p-1 bg-white shadow-xl">
               <img
-                src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&q=80&auto=format&fit=crop"
+                src={imgCorrespondent}
                 alt="Mr. Samudi Elampuranam - Correspondent"
                 className="w-full h-full object-cover rounded-full"
               />

@@ -4,11 +4,11 @@ import {
   ArrowRight, ChevronDown, ChevronLeft, ChevronRight,
   Trophy, BookOpen, GraduationCap, Sparkles, Users,
 } from "lucide-react";
-import img1 from "../assets/1.jpeg";
-import img2 from "../assets/4.jpeg";
-import img3 from "../assets/3.jpeg";
-import img4 from "../assets/18.jpeg";
-import img5 from "../assets/23.jpeg";
+import img1 from "../assets/34.jpeg";
+import img2 from "../assets/WhatsApp Image 2026-05-26 at 7.25.42 AM (1).jpeg";
+import img3 from "../assets/WhatsApp Image 2026-05-26 at 7.25.45 AM (1).jpeg";
+import img4 from "../assets/1.jpeg";
+import img5 from "../assets/4.jpeg";
 
 const slides = [
   {
@@ -112,9 +112,9 @@ export default function Hero() {
               alt={slide.title}
               className="w-full h-full object-cover ken-burns"
             />
-            {/* Strong left-to-transparent overlay so text is always readable */}
-            <div className="absolute inset-0 bg-gradient-to-r from-[#0D1B6E]/95 via-[#0D1B6E]/75 to-[#0D1B6E]/30" />
-            <div className="absolute inset-0 bg-gradient-to-t from-[#0D1B6E]/70 via-transparent to-transparent" />
+            {/* Softened overlay so image is more visible */}
+            <div className="absolute inset-0 bg-gradient-to-r from-[#0D1B6E]/80 via-[#0D1B6E]/40 to-[#0D1B6E]/10" />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#0D1B6E]/50 via-transparent to-transparent" />
           </motion.div>
         </AnimatePresence>
 
@@ -191,11 +191,11 @@ export default function Hero() {
                 <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
               </button>
               <button
-                onClick={() => scrollToSection("admission")}
-                className="inline-flex items-center gap-2 border-2 border-white/40 text-white font-semibold px-8 py-4 rounded-xl hover:bg-white/10 transition-all duration-300 text-base backdrop-blur-sm"
+                onClick={() => scrollToSection("academic")}
+                className="inline-flex items-center gap-2 border-2 border-white/40 text-white font-semibold px-8 py-4 rounded-xl hover:bg-white/10 transition-all duration-300 text-base backdrop-blur-sm group"
               >
-                Admissions
-                <ChevronDown size={18} />
+                Academics
+                <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
               </button>
             </motion.div>
 

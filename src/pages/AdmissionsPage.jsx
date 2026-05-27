@@ -2,6 +2,7 @@ import { Helmet } from 'react-helmet-async';
 import PageHero from '../components/PageHero';
 import AdmissionsCTA from '../components/AdmissionsCTA';
 import AdmissionsDetails from '../components/AdmissionsDetails';
+import pageBg from '../assets/16.jpeg';
 import { 
   FileText, CheckCircle, ArrowRight, Book, AlertCircle, 
   UserPlus, Calendar, CreditCard
@@ -18,7 +19,7 @@ export default function AdmissionsPage() {
       <PageHero 
         title="Admissions" 
         description="Join our nurturing academic community focused on excellence, discipline, and holistic development."
-        imagePlaceholder="https://images.unsplash.com/photo-1541829070764-84a7d30dd3f3?q=80&w=2069&auto=format&fit=crop"
+        imagePlaceholder={pageBg}
       />
 
       <AdmissionsCTA />

@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import defaultBg from "../assets/26.jpeg";
 
 export default function PageHero({ title, description, imagePlaceholder }) {
   return (
@@ -6,7 +7,7 @@ export default function PageHero({ title, description, imagePlaceholder }) {
       {/* Background with overlay */}
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: `url('${imagePlaceholder || "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=1920&q=80&auto=format&fit=crop"}')` }}
+        style={{ backgroundImage: `url('${imagePlaceholder || defaultBg}')` }}
       />
       <div className="absolute inset-0 bg-primary/70" />
       <div className="absolute inset-0 bg-gradient-to-t from-primary via-transparent to-transparent opacity-80" />

@@ -1,6 +1,7 @@
 import { Helmet } from 'react-helmet-async';
 import PageHero from '../components/PageHero';
 import ParentsCornerDetails from '../components/ParentsCornerDetails';
+import pageBg from '../assets/11.jpeg';
 
 export default function ParentsPage() {
   return (
@@ -13,7 +14,7 @@ export default function ParentsPage() {
       <PageHero 
         title="Parents Corner" 
         description="Fostering a collaborative partnership between parents and the institution for our students' success."
-        imagePlaceholder="https://images.unsplash.com/photo-1577896851231-70ef18881754?q=80&w=2070&auto=format&fit=crop"
+        imagePlaceholder={pageBg}
       />
 
       <ParentsCornerDetails />

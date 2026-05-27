@@ -3,12 +3,12 @@ import { motion, AnimatePresence } from "framer-motion";
 import { ChevronRight } from "lucide-react";
 
 import imgClass  from "../assets/20.jpeg";
-import imgLab    from "../assets/29.jpeg";
+import imgLab    from "../assets/WhatsApp Image 2026-05-26 at 7.25.45 AM (1).jpeg";
 import imgSport  from "../assets/21.jpeg";
 import imgCultu  from "../assets/31.jpeg";
 import imgLib    from "../assets/19.jpeg";
-import imgComp   from "../assets/30.jpeg";
-import imgBus    from "../assets/5.jpeg";
+import imgComp   from "../assets/WhatsApp Image 2026-05-26 at 7.25.47 AM.jpeg";
+import imgBus    from "../assets/WhatsApp Image 2026-05-26 at 7.25.43 AM (2).jpeg";
 import imgEvent  from "../assets/24.jpeg";
 
 const facilities = [
