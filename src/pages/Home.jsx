@@ -10,7 +10,6 @@ import WhyChooseUs       from '../components/WhyChooseUs'
 import FacilitiesShowcase from '../components/FacilitiesShowcase'
 import StudentDevelopment from '../components/StudentDevelopment'
 import CampusLife        from '../components/CampusLife'
-import QuickHighlights   from '../components/QuickHighlights'
 import AdmissionsCTA     from '../components/AdmissionsCTA'
 
 export default function Home() {
@@ -49,9 +48,6 @@ export default function Home() {
 
       {/* 1.2 About Institution Snapshot */}
       <AboutSnapshot />
-
-      {/* Quick Highlights strip */}
-      <QuickHighlights />
 
       {/* 4th - Vision · Mission · Values */}
       <VisionMission />
