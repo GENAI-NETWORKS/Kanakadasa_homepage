@@ -55,7 +55,7 @@ export default function Footer() {
               </div>
             </div>
             <p className="text-white/80 text-sm leading-relaxed mb-6">
-              Shaping Minds. Building Futures. A premier Matriculation school nurturing students from Pre-KG to Class XII.
+              Shaping Minds. Building Futures. A premier Matriculation school nurturing students from Pre-KG to Class XII. We are committed to academic excellence, holistic development, and instilling strong moral values. Our dedicated faculty empowers students through innovative learning in a highly supportive environment.
             </p>
             <div className="flex gap-4">
               <a href="#" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-accent hover:text-white transition-colors">
