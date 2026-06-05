@@ -214,7 +214,7 @@ export default function AcademicPrograms() {
 
                 <div className="p-7 md:p-9">
                   {/* Heading row */}
-                  <div className="flex items-start justify-between gap-4 mb-4">
+                  <div className="flex flex-col sm:flex-row items-start sm:justify-between gap-4 mb-4">
                     <div className="flex items-center gap-3">
                       <div
                         className="w-12 h-12 rounded-xl flex items-center justify-center shrink-0"
@@ -231,7 +231,7 @@ export default function AcademicPrograms() {
                     </div>
                     {current.badge && (
                       <span
-                        className="shrink-0 text-xs font-bold px-3 py-1.5 rounded-full text-white font-sans"
+                        className="shrink-0 text-xs font-bold px-3 py-1.5 rounded-full text-white font-sans self-start sm:self-auto"
                         style={{ background: current.color }}
                       >
                         {current.badge}
