@@ -53,7 +53,7 @@ export default function Home() {
       {/* Quick Highlights strip */}
       <QuickHighlights />
 
-      {/* 4th – Vision · Mission · Values */}
+      {/* 4th - Vision · Mission · Values */}
       <VisionMission />
 
 

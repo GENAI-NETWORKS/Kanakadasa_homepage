@@ -115,7 +115,7 @@ export default function Footer() {
               <li className="flex items-start gap-3">
                 <MapPin size={18} className="text-accent shrink-0 mt-0.5" />
                 <span className="text-white/80 text-sm leading-relaxed">
-                  Kanakadasa Avenue, Ammeri,<br />Bargur – 635104, Tamil Nadu
+                  Kanakadasa Avenue, Ammeri,<br />Bargur - 635104, Tamil Nadu
                 </span>
               </li>
               <li className="flex flex-col gap-2">
@@ -137,7 +137,7 @@ export default function Footer() {
                 <div className="mt-2 rounded-xl overflow-hidden border border-white/10 shadow-lg">
                   <iframe
                     title="St. Kanakadasa School Location"
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3901.5!2d78.3541!3d12.5488!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTLCsDMyJzU1LjciTiA3OMKwMjEnMTQuOCJF!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin&q=Kanakadasa+Avenue,+Ammeri,+Bargur,+Tamil+Nadu+635104"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3901.5!2d78.3541!3d12.5488!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTLCsDMyJzU1LjciTiA3OMKwMjEnMTQuOCJF!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin&q=St.+Kanakadasa+Matriculation+Hr.Sec.School,+Kanakadasa+Avenue,+Ammeri,+Bargur+-+635104,+Tamil+Nadu"
                     width="100%"
                     height="150"
                     style={{ border: 0 }}
@@ -147,7 +147,7 @@ export default function Footer() {
                   />
                 </div>
                 <a
-                  href="https://maps.google.com/?q=Kanakadasa+Avenue,+Ammeri,+Bargur,+Tamil+Nadu+635104"
+                  href="https://maps.google.com/?q=St.+Kanakadasa+Matriculation+Hr.Sec.School,+Kanakadasa+Avenue,+Ammeri,+Bargur+-+635104,+Tamil+Nadu"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-1 mt-2 text-accent text-xs font-semibold hover:underline"
@@ -183,11 +183,11 @@ export default function Footer() {
               <div className="space-y-2">
                 <div>
                   <p className="text-white/60 text-[11px] uppercase tracking-widest mb-0.5">LKG &amp; UKG</p>
-                  <p className="text-white/80 text-xs">Mon–Fri: 8:45 AM – 3:30 PM</p>
+                  <p className="text-white/80 text-xs">Mon-Fri: 8:45 AM - 3:30 PM</p>
                 </div>
                 <div className="border-t border-white/10 pt-2">
                   <p className="text-white/60 text-[11px] uppercase tracking-widest mb-0.5">Class I to XII</p>
-                  <p className="text-white/80 text-xs">Mon–Sat: 8:45 AM – 3:30 PM</p>
+                  <p className="text-white/80 text-xs">Mon-Sat: 8:45 AM - 3:30 PM</p>
                 </div>
               </div>
             </div>

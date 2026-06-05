@@ -8,8 +8,8 @@ const cards = [
     accentColor: "#1A472A",
     bgGradient: "from-[#1A472A] to-[#2D6A4F]",
     details: [
-      { label: "LKG & UKG", value: "Mon–Fri: 8:45 AM – 3:30 PM" },
-      { label: "Class I to XII", value: "Mon–Sat: 8:45 AM – 3:30 PM" },
+      { label: "LKG & UKG", value: "Mon-Fri: 8:45 AM - 3:30 PM" },
+      { label: "Class I to XII", value: "Mon-Sat: 8:45 AM - 3:30 PM" },
     ],
   },
   {
@@ -18,9 +18,9 @@ const cards = [
     accentColor: "#E63946",
     bgGradient: "from-[#E63946] to-[#c0272f]",
     details: [
-      { label: "Correspondent", value: "Mon–Fri: 10:00 AM – 12:00 PM (By Appt.)" },
-      { label: "Principal", value: "Mon–Sat: 4:00 PM – 5:00 PM" },
-      { label: "Teachers", value: "Every Saturday: 2:00 PM – 3:00 PM" },
+      { label: "Correspondent", value: "Mon-Fri: 10:00 AM - 12:00 PM (By Appt.)" },
+      { label: "Principal", value: "Mon-Sat: 4:00 PM - 5:00 PM" },
+      { label: "Teachers", value: "Every Saturday: 2:00 PM - 3:00 PM" },
     ],
   },
   {
@@ -29,8 +29,8 @@ const cards = [
     accentColor: "#F4A261",
     bgGradient: "from-[#F4A261] to-[#e8882a]",
     details: [
-      { label: "General Office", value: "Mon–Sat: 8:45 AM – 4:30 PM" },
-      { label: "Admissions Office", value: "Mon–Sat: 9:00 AM – 4:00 PM" },
+      { label: "General Office", value: "Mon-Sat: 8:45 AM - 4:30 PM" },
+      { label: "Admissions Office", value: "Mon-Sat: 9:00 AM - 4:00 PM" },
     ],
   },
 ];
