@@ -65,11 +65,16 @@ export default function AboutSnapshot() {
         {/* ── LEFT: Colourful image collage ── */}
         <div className="relative overflow-hidden bg-[#1A237E] min-h-[420px] lg:min-h-0">
 
-          {/* diagonal clip for desktop */}
+          {/* Image Collage (Visible on all screens) */}
           <div
-            className="absolute inset-0 hidden lg:block"
-            style={{ clipPath: "polygon(0 0, 92% 0, 100% 100%, 0 100%)" }}
+            className="absolute inset-0"
+            style={{ clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)" }}
           >
+            {/* We apply a CSS variable or a style object, but Tailwind's lg: style doesn't easily do clipPath. 
+                Instead we will use a wrapper that has the clipPath ONLY on lg screens. */}
+          </div>
+          
+          <div className="absolute inset-0 lg:[clip-path:polygon(0_0,92%_0,100%_100%,0_100%)]">
             <div className="grid grid-cols-2 h-full">
               <div className="relative overflow-hidden">
                 <img src={img1} alt="Campus" className="w-full h-full object-cover ken-burns" />
@@ -86,12 +91,6 @@ export default function AboutSnapshot() {
             </div>
             {/* gradient over images */}
             <div className="absolute inset-0" style={{ background: "linear-gradient(135deg, rgba(26,35,126,0.55) 0%, transparent 60%)" }} />
-          </div>
-
-          {/* Mobile: simple image */}
-          <div className="lg:hidden h-64 relative overflow-hidden">
-            <img src={img1} alt="Campus" className="w-full h-full object-cover ken-burns" />
-            <div className="absolute inset-0 bg-[#1A237E]/50" />
           </div>
 
           {/* Floating badge — State Board trust signal */}
