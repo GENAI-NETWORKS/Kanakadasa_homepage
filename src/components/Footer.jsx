@@ -137,7 +137,7 @@ export default function Footer() {
                 <div className="mt-2 rounded-xl overflow-hidden border border-white/10 shadow-lg">
                   <iframe
                     title="St. Kanakadasa School Location"
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3901.5!2d78.3541!3d12.5488!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTLCsDMyJzU1LjciTiA3OMKwMjEnMTQuOCJF!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin&q=St.+Kanakadasa+Matriculation+Hr.Sec.School,+Kanakadasa+Avenue,+Ammeri,+Bargur+-+635104,+Tamil+Nadu"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3901.5!2d78.3541!3d12.5488!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTLCsDMyJzU1LjciTiA3OMKwMjEnMTQuOCJF!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin&q=Ammeri,+Bargur+-+635104,+Tamil+Nadu"
                     width="100%"
                     height="150"
                     style={{ border: 0 }}
@@ -147,7 +147,7 @@ export default function Footer() {
                   />
                 </div>
                 <a
-                  href="https://maps.google.com/?q=St.+Kanakadasa+Matriculation+Hr.Sec.School,+Kanakadasa+Avenue,+Ammeri,+Bargur+-+635104,+Tamil+Nadu"
+                  href="https://maps.google.com/?q=Ammeri,+Bargur+-+635104,+Tamil+Nadu"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-1 mt-2 text-accent text-xs font-semibold hover:underline"

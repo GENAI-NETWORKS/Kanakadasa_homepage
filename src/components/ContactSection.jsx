@@ -64,7 +64,7 @@ export default function ContactSection() {
             <div className="w-full h-64 md:h-80 rounded-2xl overflow-hidden shadow-lg border border-gray-100">
               <iframe
                 title="St. Kanakadasa School Location"
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3901.5!2d78.3541!3d12.5488!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTLCsDMyJzU1LjciTiA3OMKwMjEnMTQuOCJF!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin&q=St.+Kanakadasa+Matriculation+Hr.Sec.School,+Kanakadasa+Avenue,+Ammeri,+Bargur+-+635104,+Tamil+Nadu"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3901.5!2d78.3541!3d12.5488!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTLCsDMyJzU1LjciTiA3OMKwMjEnMTQuOCJF!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin&q=Ammeri,+Bargur+-+635104,+Tamil+Nadu"
                 width="100%"
                 height="100%"
                 style={{ border: 0 }}
