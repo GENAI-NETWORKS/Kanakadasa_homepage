@@ -12,7 +12,7 @@ const detailedAmenities = [
   {
     icon: Leaf,
     title: "Spacious Green Campus",
-    description: "ST. Kanakadasa Educational Institutions provides a peaceful and eco-friendly campus surrounded by a lush green environment that creates a positive and refreshing atmosphere for learning. The spacious campus supports both academic and extracurricular activities while ensuring comfort and safety for students.",
+    description: "St. Kanakadasa Matriculation Hr.Sec.School provides a peaceful and eco-friendly campus surrounded by a lush green environment that creates a positive and refreshing atmosphere for learning. The spacious campus supports both academic and extracurricular activities while ensuring comfort and safety for students.",
     color: "text-emerald-500",
     bg: "bg-emerald-500/10"
   },
@@ -99,7 +99,7 @@ export default function FacilitiesPage() {
   return (
     <>
       <Helmet>
-        <title>Facilities & Infrastructure | St. Kanakadasa Educational Institutions</title>
+        <title>Facilities & Infrastructure | St. Kanakadasa Matriculation Hr.Sec.School</title>
         <meta name="description" content="Explore the comprehensive infrastructure at St. Kanakadasa including a green campus, smart classrooms, science labs, and sports facilities." />
       </Helmet>
 

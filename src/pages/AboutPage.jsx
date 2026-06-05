@@ -10,8 +10,8 @@ export default function AboutPage() {
   return (
     <>
       <Helmet>
-        <title>About Us | St. Kanakadasa Educational Institutions</title>
-        <meta name="description" content="Learn about our Institution History, Educational Legacy, Philosophy, and our dedicated Management Team at St. Kanakadasa Educational Institutions, Bargur." />
+        <title>About Us | St. Kanakadasa Matriculation Hr.Sec.School</title>
+        <meta name="description" content="Learn about our Institution History, Educational Legacy, Philosophy, and our dedicated Management Team at St. Kanakadasa Matriculation Hr.Sec.School, Bargur." />
       </Helmet>
 
       <PageHero 
@@ -63,7 +63,7 @@ export default function AboutPage() {
                   <Star className="text-accent shrink-0" /> 2.1 About the Institution
                 </h2>
                 <p className="text-textmuted leading-relaxed text-justify">
-                  ST. Kanakadasa Educational Institutions stands as a beacon of academic excellence, value-based education, and holistic development. Established with a vision to nurture young minds through quality education and disciplined learning, the institution has emerged as one of the trusted educational destinations in the region. With a strong commitment towards academic standards, character formation, leadership development, and innovative teaching practices, the institution continuously empowers students to become confident, responsible, and future-ready citizens. The institution provides a vibrant educational environment supported by experienced faculty members, smart classrooms, modern laboratories, co-curricular activities, and student-centered learning methodologies that inspire excellence in every learner.
+                  St. Kanakadasa Matriculation Hr.Sec.School stands as a beacon of academic excellence, value-based education, and holistic development. Established with a vision to nurture young minds through quality education and disciplined learning, the institution has emerged as one of the trusted educational destinations in the region. With a strong commitment towards academic standards, character formation, leadership development, and innovative teaching practices, the institution continuously empowers students to become confident, responsible, and future-ready citizens. The institution provides a vibrant educational environment supported by experienced faculty members, smart classrooms, modern laboratories, co-curricular activities, and student-centered learning methodologies that inspire excellence in every learner.
                 </p>
               </div>
 
@@ -72,7 +72,7 @@ export default function AboutPage() {
                   <BookOpen className="text-secondary shrink-0" /> 2.2 Educational Legacy
                 </h2>
                 <p className="text-textmuted leading-relaxed text-justify">
-                  With more than two decades of dedicated service in the field of education, ST. Kanakadasa Educational Institutions have successfully built a legacy rooted in discipline, academic achievement, and moral values. The institution has consistently guided generations of students towards academic success and personal growth through a balanced educational approach. Its unwavering focus on quality education, ethical practices, and holistic student development has earned the trust of parents and the respect of the educational community. The institution continues to uphold its legacy by adapting modern educational practices while preserving strong cultural and moral foundations.
+                  With more than two decades of dedicated service in the field of education, St. Kanakadasa Matriculation Hr.Sec.School have successfully built a legacy rooted in discipline, academic achievement, and moral values. The institution has consistently guided generations of students towards academic success and personal growth through a balanced educational approach. Its unwavering focus on quality education, ethical practices, and holistic student development has earned the trust of parents and the respect of the educational community. The institution continues to uphold its legacy by adapting modern educational practices while preserving strong cultural and moral foundations.
                 </p>
               </div>
 
@@ -81,7 +81,7 @@ export default function AboutPage() {
                   <Users className="text-primary shrink-0" /> 2.3 Our Philosophy of Education
                 </h2>
                 <p className="text-textmuted leading-relaxed text-justify">
-                  The philosophy of education at ST. Kanakadasa Educational Institutions is centered on the belief that every child possesses unique talents and limitless potential. The institution strives to create an environment where students are encouraged to think independently, explore creatively, and grow intellectually, emotionally, socially, and morally. Education is viewed not merely as academic instruction but as a process of shaping responsible individuals with strong character, compassion, confidence, and leadership qualities. Through a learner-friendly atmosphere and innovative teaching methods, the institution aims to cultivate lifelong learners capable of contributing positively to society.
+                  The philosophy of education at St. Kanakadasa Matriculation Hr.Sec.School is centered on the belief that every child possesses unique talents and limitless potential. The institution strives to create an environment where students are encouraged to think independently, explore creatively, and grow intellectually, emotionally, socially, and morally. Education is viewed not merely as academic instruction but as a process of shaping responsible individuals with strong character, compassion, confidence, and leadership qualities. Through a learner-friendly atmosphere and innovative teaching methods, the institution aims to cultivate lifelong learners capable of contributing positively to society.
                 </p>
               </div>
 
@@ -90,7 +90,7 @@ export default function AboutPage() {
                   <Target className="text-accent shrink-0" /> 2.4 Institution History
                 </h2>
                 <p className="text-textmuted leading-relaxed text-justify">
-                  ST. Kanakadasa Educational Institutions were founded with the noble objective of providing quality education accessible to students from all backgrounds. Beginning as a modest educational initiative, the institution gradually expanded through its dedication to academic excellence, disciplined administration, and community trust. Over the years, the institution has grown into a comprehensive educational group offering Matriculation, CBSE, Nursery, and Primary education. Its journey reflects continuous growth, modernization, and a strong commitment to nurturing students with knowledge, values, and future-oriented skills.
+                  St. Kanakadasa Matriculation Hr.Sec.School were founded with the noble objective of providing quality education accessible to students from all backgrounds. Beginning as a modest educational initiative, the institution gradually expanded through its dedication to academic excellence, disciplined administration, and community trust. Over the years, the institution has grown into a comprehensive educational group offering Matriculation, Nursery, and Primary education. Its journey reflects continuous growth, modernization, and a strong commitment to nurturing students with knowledge, values, and future-oriented skills.
                 </p>
               </div>
             </div>
@@ -102,7 +102,7 @@ export default function AboutPage() {
                   <Sparkles className="text-accent shrink-0" /> 2.5 Excellence Through Innovation
                 </h2>
                 <p className="text-textmuted leading-relaxed text-justify">
-                  The institution strongly believes that innovation is the foundation of modern education. By integrating smart classroom technologies, digital learning resources, practical-oriented teaching methodologies, and skill-based learning activities, ST. Kanakadasa Educational Institutions create an engaging and future-focused academic environment. Students are encouraged to explore, question, analyze, and apply knowledge through interactive learning experiences. The institution continuously upgrades its academic practices, infrastructure, and teaching techniques to ensure students receive globally relevant and technologically advanced education.
+                  The institution strongly believes that innovation is the foundation of modern education. By integrating smart classroom technologies, digital learning resources, practical-oriented teaching methodologies, and skill-based learning activities, St. Kanakadasa Matriculation Hr.Sec.School create an engaging and future-focused academic environment. Students are encouraged to explore, question, analyze, and apply knowledge through interactive learning experiences. The institution continuously upgrades its academic practices, infrastructure, and teaching techniques to ensure students receive globally relevant and technologically advanced education.
                 </p>
               </div>
 
@@ -111,7 +111,7 @@ export default function AboutPage() {
                   <Heart className="text-secondary shrink-0" /> 2.6 Student-Centric Learning Approach
                 </h2>
                 <p className="text-textmuted leading-relaxed text-justify">
-                  At ST. Kanakadasa Educational Institutions, every student is recognized as a unique learner with individual strengths, interests, and aspirations. The institution adopts a student-centric learning approach that focuses on personalized attention, conceptual understanding, practical exposure, and continuous mentoring. Teachers serve as facilitators who guide students through interactive classroom sessions, collaborative activities, creative projects, and real-world learning experiences. This approach helps students develop confidence, curiosity, communication skills, leadership qualities, and independent thinking abilities essential for lifelong success.
+                  At St. Kanakadasa Matriculation Hr.Sec.School, every student is recognized as a unique learner with individual strengths, interests, and aspirations. The institution adopts a student-centric learning approach that focuses on personalized attention, conceptual understanding, practical exposure, and continuous mentoring. Teachers serve as facilitators who guide students through interactive classroom sessions, collaborative activities, creative projects, and real-world learning experiences. This approach helps students develop confidence, curiosity, communication skills, leadership qualities, and independent thinking abilities essential for lifelong success.
                 </p>
               </div>
 
@@ -129,7 +129,7 @@ export default function AboutPage() {
                   <Shield className="text-accent shrink-0" /> 2.8 Holistic Development System
                 </h2>
                 <p className="text-textmuted leading-relaxed text-justify">
-                  ST. Kanakadasa Educational Institutions emphasize the holistic development of students by nurturing their academic, physical, emotional, social, cultural, and moral growth. Along with scholastic excellence, equal importance is given to sports, yoga, martial arts, music, dance, arts, leadership activities, and value education. The institution creates opportunities for students to participate in clubs, competitions, cultural programs, field trips, and community-oriented activities that help them discover their talents and build self-confidence. This balanced educational system ensures the overall personality development of every student.
+                  St. Kanakadasa Matriculation Hr.Sec.School emphasize the holistic development of students by nurturing their academic, physical, emotional, social, cultural, and moral growth. Along with scholastic excellence, equal importance is given to sports, yoga, martial arts, music, dance, arts, leadership activities, and value education. The institution creates opportunities for students to participate in clubs, competitions, cultural programs, field trips, and community-oriented activities that help them discover their talents and build self-confidence. This balanced educational system ensures the overall personality development of every student.
                 </p>
               </div>
             </div>
@@ -267,7 +267,7 @@ To provide student-centered education through innovative teaching methods, moder
               </p>
             </div>
             <div className="bg-white/10 p-6 rounded-xl border border-white/20 backdrop-blur-sm flex flex-col justify-between">
-              <h3 className="font-bold text-accent mb-4">ST. Kanakadasa Senior Secondary Public School CBSE</h3>
+              <h3 className="font-bold text-accent mb-4">St. Kanakadasa Matriculation Hr.Sec.School</h3>
               <p className="text-white/80 text-sm flex items-center gap-2">
                 <span className="font-semibold text-white">Contact:</span> 95973 45893
               </p>

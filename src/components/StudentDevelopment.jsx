@@ -17,7 +17,7 @@ const activities = [
 
 export default function StudentDevelopment() {
   return (
-    <section id="development" className="relative py-24 overflow-hidden bg-gray-50">
+    <section id="development" className="relative py-14 overflow-hidden bg-gray-50">
 
       {/* Decorative background typography */}
       <div className="absolute top-40 left-0 text-[15vw] font-black text-gray-200/40 select-none pointer-events-none font-heading whitespace-nowrap">

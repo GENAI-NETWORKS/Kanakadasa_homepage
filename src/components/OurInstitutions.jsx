@@ -18,9 +18,9 @@ const institutions = [
   {
     img: img2,
     shortName: "Senior Secondary Public School",
-    board: "CBSE Board",
+    board: "State Board",
     grades: "Class I – XII",
-    tag: "CBSE",
+    tag: "Matriculation",
     from: "#1A237E",
     to: "#0277BD",
   },
@@ -70,7 +70,7 @@ export default function OurInstitutions() {
             Our <span className="text-gradient animated-underline">Institutions</span>
           </h2>
           <p className="text-gray-500 mt-3 text-sm max-w-sm mx-auto font-sans">
-            Four campuses · Pre-KG to Class XII · CBSE &amp; Matric
+            Four campuses · Pre-KG to Class XII · Matric
           </p>
         </motion.div>
 
@@ -169,7 +169,7 @@ export default function OurInstitutions() {
         >
           {[
             { icon: School,   val: "4",     label: "Campus Buildings" },
-            { icon: BookOpen, val: "CBSE & Matric", label: "Boards Offered" },
+            { icon: BookOpen, val: "Matric", label: "Boards Offered" },
             { icon: Users,    val: "Pre-KG to XII", label: "Full Schooling" },
             { icon: MapPin,   val: "Bargur", label: "Ammeri, TN" },
           ].map(({ icon: Icon, val, label }, i) => (

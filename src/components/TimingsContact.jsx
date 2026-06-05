@@ -37,7 +37,7 @@ const cards = [
 
 export default function TimingsContact() {
   return (
-    <section className="relative py-20 bg-white overflow-hidden">
+    <section className="relative py-12 bg-white overflow-hidden">
       {/* Striped pattern background */}
       <div
         className="absolute inset-0 pointer-events-none opacity-30"

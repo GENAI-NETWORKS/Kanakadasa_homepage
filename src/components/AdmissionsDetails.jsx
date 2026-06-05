@@ -9,7 +9,7 @@ export default function AdmissionsDetails() {
           <UserPlus className="text-accent" /> Admission Overview
         </h3>
         <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
-          <p className="text-textmuted leading-relaxed text-center">ST. Kanakadasa Educational Institutions welcomes students into a nurturing academic environment focused on excellence, discipline, creativity, and holistic development. Admissions are offered from Pre-KG to Higher Secondary levels based on eligibility criteria and seat availability. The institution ensures a smooth and transparent admission process for parents and students.</p>
+          <p className="text-textmuted leading-relaxed text-center">St. Kanakadasa Matriculation Hr.Sec.School welcomes students into a nurturing academic environment focused on excellence, discipline, creativity, and holistic development. Admissions are offered from Pre-KG to Higher Secondary levels based on eligibility criteria and seat availability. The institution ensures a smooth and transparent admission process for parents and students.</p>
         </div>
       </div>
 
@@ -29,8 +29,8 @@ export default function AdmissionsDetails() {
           </h3>
           <div className="bg-lightbg rounded-2xl p-6 border border-gray-100 h-full">
             <ul className="space-y-3">
-              <li className="flex items-start gap-2 text-sm text-textdark font-medium"><span className="text-accent mt-0.5">•</span> Pre-KG – Minimum 2½ Years</li>
-              <li className="flex items-start gap-2 text-sm text-textdark font-medium"><span className="text-accent mt-0.5">•</span> LKG – Minimum 3 Years</li>
+              <li className="flex items-start gap-2 text-sm text-textdark font-medium"><span className="text-accent mt-0.5">•</span> Pre-KG - Minimum 2½ Years</li>
+              <li className="flex items-start gap-2 text-sm text-textdark font-medium"><span className="text-accent mt-0.5">•</span> LKG - Minimum 3 Years</li>
               <li className="flex items-start gap-2 text-sm text-textmuted"><span className="text-accent mt-0.5">•</span> Age eligibility is calculated as per academic year norms</li>
               <li className="flex items-start gap-2 text-sm text-textmuted"><span className="text-accent mt-0.5">•</span> Birth Certificate is mandatory for verification</li>
             </ul>

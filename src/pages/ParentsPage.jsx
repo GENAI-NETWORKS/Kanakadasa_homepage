@@ -7,7 +7,7 @@ export default function ParentsPage() {
   return (
     <>
       <Helmet>
-        <title>Parents Corner | St. Kanakadasa Educational Institutions</title>
+        <title>Parents Corner | St. Kanakadasa Matriculation Hr.Sec.School</title>
         <meta name="description" content="Parent-school partnership, communication system, and guidelines for parents at St. Kanakadasa." />
       </Helmet>
 

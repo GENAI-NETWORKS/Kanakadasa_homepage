@@ -18,7 +18,7 @@ export default function ParentsCornerDetails() {
             </div>
             <h3 className="text-2xl font-bold text-primary font-heading">Parent-School Partnership</h3>
           </div>
-          <p className="text-textmuted leading-relaxed text-justify">ST. Kanakadasa Educational Institutions strongly believes that the combined efforts of parents and teachers play a vital role in the successful development of students. The institution maintains a healthy and supportive partnership with parents to ensure academic excellence, discipline, and overall student well-being.</p>
+          <p className="text-textmuted leading-relaxed text-justify">St. Kanakadasa Matriculation Hr.Sec.School strongly believes that the combined efforts of parents and teachers play a vital role in the successful development of students. The institution maintains a healthy and supportive partnership with parents to ensure academic excellence, discipline, and overall student well-being.</p>
         </div>
 
         <div className="grid md:grid-cols-2 gap-8 mb-16">

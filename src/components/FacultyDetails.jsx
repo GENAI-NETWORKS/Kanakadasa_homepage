@@ -16,7 +16,7 @@ export default function FacultyDetails() {
           <div className="bg-lightbg p-6 rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
             <GraduationCap className="text-primary mb-4" size={28} />
             <h3 className="font-bold text-primary mb-3">Highly Qualified Faculty</h3>
-            <p className="text-textmuted text-sm leading-relaxed text-justify">ST. Kanakadasa Educational Institutions is supported by a team of highly qualified, experienced, dedicated, and student-friendly faculty members committed to academic excellence and holistic student development. Teachers continuously guide and motivate students to achieve their highest potential through effective teaching and mentorship.</p>
+            <p className="text-textmuted text-sm leading-relaxed text-justify">St. Kanakadasa Matriculation Hr.Sec.School is supported by a team of highly qualified, experienced, dedicated, and student-friendly faculty members committed to academic excellence and holistic student development. Teachers continuously guide and motivate students to achieve their highest potential through effective teaching and mentorship.</p>
           </div>
 
           <div className="bg-lightbg p-6 rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition-shadow">

@@ -4,7 +4,7 @@ import {
 
 const ticker = [
   { icon: GraduationCap, text: "Admissions Open 2026–27" },
-  { icon: BookOpen,       text: "CBSE & Matric Boards" },
+  { icon: BookOpen,       text: "State Board Syllabus" },
   { icon: Trophy,         text: "100% Board Results" },
   { icon: FlaskConical,   text: "NEET / JEE Coaching" },
   { icon: Bus,            text: "Transportation Available" },

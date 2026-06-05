@@ -40,22 +40,22 @@ export default function Footer() {
           {/* Col 1: Brand */}
           <div>
             <div className="flex items-center gap-3 mb-6">
-              <img 
-                src={logo} 
-                alt="St. Kanakadasa Logo" 
-                className="w-12 h-12 object-contain bg-white rounded-full p-0.5"
+              <img
+                src={logo}
+                alt="St. Kanakadasa Logo"
+                className="w-20 h-20 object-contain bg-white rounded-full p-0.5"
               />
               <div>
                 <p className="font-heading font-bold text-white text-lg leading-tight">
                   St. Kanakadasa
                 </p>
                 <p className="text-xs font-medium text-white/70 tracking-wide">
-                  Educational Institutions
+                  Matriculation Hr.Sec.School
                 </p>
               </div>
             </div>
             <p className="text-white/80 text-sm leading-relaxed mb-6">
-              Shaping Minds. Building Futures. A premier CBSE &amp; Matriculation school nurturing students from Pre-KG to Class XII.
+              Shaping Minds. Building Futures. A premier Matriculation school nurturing students from Pre-KG to Class XII.
             </p>
             <div className="flex gap-4">
               <a href="#" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-accent hover:text-white transition-colors">
@@ -133,6 +133,29 @@ export default function Footer() {
                   principal@kanakadasaschool.in
                 </a>
               </li>
+              <li>
+                <div className="mt-2 rounded-xl overflow-hidden border border-white/10 shadow-lg">
+                  <iframe
+                    title="St. Kanakadasa School Location"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3901.5!2d78.3541!3d12.5488!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTLCsDMyJzU1LjciTiA3OMKwMjEnMTQuOCJF!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin&q=Kanakadasa+Avenue,+Ammeri,+Bargur,+Tamil+Nadu+635104"
+                    width="100%"
+                    height="150"
+                    style={{ border: 0 }}
+                    allowFullScreen=""
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                  />
+                </div>
+                <a
+                  href="https://maps.google.com/?q=Kanakadasa+Avenue,+Ammeri,+Bargur,+Tamil+Nadu+635104"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1 mt-2 text-accent text-xs font-semibold hover:underline"
+                >
+                  <MapPin size={12} />
+                  Get Directions
+                </a>
+              </li>
             </ul>
           </div>
 
@@ -156,8 +179,17 @@ export default function Footer() {
               </li>
             </ul>
             <div className="bg-white/5 rounded-lg p-4 border border-white/10">
-              <p className="text-accent font-semibold text-sm mb-1">School Timings</p>
-              <p className="text-white/80 text-xs">Mon–Sat: 8:45 AM – 3:30 PM</p>
+              <p className="text-accent font-semibold text-sm mb-3">School Timings</p>
+              <div className="space-y-2">
+                <div>
+                  <p className="text-white/60 text-[11px] uppercase tracking-widest mb-0.5">LKG &amp; UKG</p>
+                  <p className="text-white/80 text-xs">Mon–Fri: 8:45 AM – 3:30 PM</p>
+                </div>
+                <div className="border-t border-white/10 pt-2">
+                  <p className="text-white/60 text-[11px] uppercase tracking-widest mb-0.5">Class I to XII</p>
+                  <p className="text-white/80 text-xs">Mon–Sat: 8:45 AM – 3:30 PM</p>
+                </div>
+              </div>
             </div>
           </div>
 
@@ -166,7 +198,7 @@ export default function Footer() {
         {/* Bottom Bar */}
         <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-center md:text-left">
           <p className="text-white/60 text-sm">
-            © {currentYear} St. Kanakadasa Educational Institutions. All rights reserved.
+            © {currentYear} St. Kanakadasa Matriculation Hr.Sec.School. All rights reserved.
           </p>
           <p className="text-white/60 text-sm">
             <a href="https://www.kanakadasaschool.in" className="hover:text-accent transition-colors">www.kanakadasaschool.in</a>

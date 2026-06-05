@@ -12,7 +12,7 @@ export default function AdmissionsPage() {
   return (
     <>
       <Helmet>
-        <title>Admissions | St. Kanakadasa Educational Institutions</title>
+        <title>Admissions | St. Kanakadasa Matriculation Hr.Sec.School</title>
         <meta name="description" content="Detailed admission procedure, eligibility criteria, required documents, and Class 11 groups at St. Kanakadasa." />
       </Helmet>
 

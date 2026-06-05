@@ -7,8 +7,8 @@ export default function ContactPage() {
   return (
     <>
       <Helmet>
-        <title>Contact Us | St. Kanakadasa Educational Institutions</title>
-        <meta name="description" content="Get in touch with St. Kanakadasa Educational Institutions. View our contact details, map, and office timings." />
+        <title>Contact Us | St. Kanakadasa Matriculation Hr.Sec.School</title>
+        <meta name="description" content="Get in touch with St. Kanakadasa Matriculation Hr.Sec.School. View our contact details, map, and office timings." />
       </Helmet>
 
       <PageHero 
@@ -49,7 +49,7 @@ export default function ContactPage() {
                 <MapPin className="text-primary group-hover:text-white transition-colors" size={24} />
               </div>
               <div>
-                <h3 className="text-lg font-bold text-primary mb-2">ST. Kanakadasa Senior Secondary Public School (CBSE)</h3>
+                <h3 className="text-lg font-bold text-primary mb-2">St. Kanakadasa Matriculation Hr.Sec.School</h3>
                 <p className="text-sm text-textmuted mb-4">Kanakadasa Avenue, Ammeri, Bargur</p>
                 <p className="text-sm font-semibold text-textdark flex items-center gap-2">
                   <Phone size={16} className="text-accent" /> +91 95973 45893

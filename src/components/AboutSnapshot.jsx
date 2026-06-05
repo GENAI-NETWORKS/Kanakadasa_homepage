@@ -94,7 +94,7 @@ export default function AboutSnapshot() {
             <div className="absolute inset-0 bg-[#1A237E]/50" />
           </div>
 
-          {/* Floating badge — CBSE board trust signal */}
+          {/* Floating badge — State Board trust signal */}
           <motion.div
             initial={{ scale: 0, rotate: -10 }}
             whileInView={{ scale: 1, rotate: 0 }}
@@ -145,7 +145,7 @@ export default function AboutSnapshot() {
             <span className="text-gradient-saffron animated-underline">Bargur</span>
           </h2>
           <p className="text-gray-600 leading-relaxed text-sm sm:text-base mb-8 max-w-lg">
-            Offering CBSE &amp; Matric streams from Pre-KG to Class XII in Bargur, rooted in discipline, innovation, and the spirit of Sri Kanakadasa.
+            Offering Matric streams from Pre-KG to Class XII in Bargur, rooted in discipline, innovation, and the spirit of Sri Kanakadasa.
           </p>
 
           {/* Animated counter stats */}

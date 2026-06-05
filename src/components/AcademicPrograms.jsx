@@ -29,7 +29,7 @@ const stages = [
   {
     id: "primary",
     label: "Primary",
-    grade: "Class I – V",
+    grade: "Class I - V",
     icon: BookMarked,
     color: "#2D9CDB",
     bg: "#2D9CDB15",
@@ -46,7 +46,7 @@ const stages = [
   {
     id: "secondary",
     label: "Secondary",
-    grade: "Class VI – X",
+    grade: "Class VI - X",
     icon: FlaskConical,
     color: "#9B51E0",
     bg: "#9B51E015",
@@ -63,7 +63,7 @@ const stages = [
   {
     id: "senior",
     label: "Senior Secondary",
-    grade: "Class XI – XII",
+    grade: "Class XI - XII",
     icon: Trophy,
     color: "#E63946",
     bg: "#E6394615",
@@ -86,7 +86,7 @@ export default function AcademicPrograms() {
   const Icon = current.icon;
 
   return (
-    <section id="academic" className="relative py-24 overflow-hidden bg-[#FFF8F0]">
+    <section id="academic" className="relative py-14 overflow-hidden bg-[#FFF8F0]">
 
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

@@ -31,7 +31,7 @@ const counters = [
 
 export default function CampusLife() {
   return (
-    <section id="campus" className="relative py-24 overflow-hidden bg-[#0D1B6E]">
+    <section id="campus" className="relative py-14 overflow-hidden bg-[#0D1B6E]">
 
       {/* Decorative dots */}
       <div className="absolute inset-0 opacity-[0.04] pointer-events-none" style={{ backgroundImage: "radial-gradient(circle, #fff 1px, transparent 1px)", backgroundSize: "24px 24px" }} />

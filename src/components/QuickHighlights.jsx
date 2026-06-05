@@ -14,9 +14,9 @@ const keyFacts = [
   },
   {
     icon: GraduationCap,
-    value: "CBSE",
-    label: "& Matric Boards",
-    desc: "Dual board — your choice, your path.",
+    value: "Matric",
+    label: "Hr.Sec.School",
+    desc: "State Board curriculum for holistic growth.",
     from: "#FF6F00",
     to: "#F9A825",
     border: "#FF6F00",
@@ -34,15 +34,11 @@ const keyFacts = [
   },
 ];
 
-const highlights = [
-  "Smart Classrooms", "Modern Labs", "Experienced Faculty",
-  "Holistic Growth", "Transportation", "Safe Campus",
-  "Co-Curricular", "Leadership Programs",
-];
+
 
 export default function QuickHighlights() {
   return (
-    <section className="relative py-20 overflow-hidden" style={{ background: "linear-gradient(135deg, #0D1B6E 0%, #1A237E 40%, #0277BD 100%)" }}>
+    <section className="relative py-12 overflow-hidden" style={{ background: "linear-gradient(135deg, #0D1B6E 0%, #1A237E 40%, #0277BD 100%)" }}>
       {/* Animated background circles */}
       <div className="absolute top-0 left-0 w-96 h-96 rounded-full opacity-10 blur-3xl pointer-events-none" style={{ background: "#FF6F00" }} />
       <div className="absolute bottom-0 right-0 w-80 h-80 rounded-full opacity-10 blur-3xl pointer-events-none" style={{ background: "#F9A825" }} />
@@ -93,23 +89,6 @@ export default function QuickHighlights() {
           })}
         </div>
 
-        {/* Pills */}
-        <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.3 }} className="flex flex-wrap justify-center gap-3">
-          {highlights.map((h, i) => (
-            <motion.span
-              key={i}
-              initial={{ opacity: 0, scale: 0.8 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.3, delay: i * 0.06 }}
-              whileHover={{ scale: 1.08 }}
-              className="inline-flex items-center gap-2 bg-white/10 border border-white/20 text-white text-sm font-semibold px-5 py-2.5 rounded-full cursor-default backdrop-blur-sm hover:bg-white/20 transition-all"
-            >
-              <span className="w-2 h-2 rounded-full bg-[#F9A825]" />
-              {h}
-            </motion.span>
-          ))}
-        </motion.div>
       </div>
     </section>
   );

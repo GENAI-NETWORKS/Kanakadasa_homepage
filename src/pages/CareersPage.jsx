@@ -7,7 +7,7 @@ export default function CareersPage() {
   return (
     <>
       <Helmet>
-        <title>Careers | St. Kanakadasa Educational Institutions</title>
+        <title>Careers | St. Kanakadasa Matriculation Hr.Sec.School</title>
         <meta name="description" content="Join our team of highly qualified faculty. Explore our teaching methodology and faculty development programs." />
       </Helmet>
 

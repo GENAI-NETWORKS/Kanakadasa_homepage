@@ -4,15 +4,15 @@ import { Menu, X } from "lucide-react";
 import logo from "../assets/logo.png";
 
 const navLinks = [
-  { label: "Home",       href: "/" },
-  { label: "About",      href: "/about" },
-  { label: "Academic",   href: "/academic" },
-  { label: "Facility",   href: "/facility" },
+  { label: "Home", href: "/" },
+  { label: "About", href: "/about" },
+  { label: "Academic", href: "/academic" },
+  { label: "Facility", href: "/facility" },
   { label: "Curriculum", href: "/curriculum" },
-  { label: "Admission",  href: "/admission" },
-  { label: "Parents",    href: "/parents" },
-  { label: "Gallery",    href: "/gallery" },
-  { label: "Careers",    href: "/careers" },
+  { label: "Admission", href: "/admission" },
+  { label: "Parents", href: "/parents" },
+  { label: "Gallery", href: "/gallery" },
+  { label: "Careers", href: "/careers" },
   { label: "Contact Us", href: "/contact" },
 ];
 
@@ -38,9 +38,8 @@ export default function Navbar() {
 
   return (
     <header
-      className={`fixed left-0 right-0 z-50 transition-all duration-300 ${
-        isSolidNav ? "bg-white shadow-lg" : "bg-transparent"
-      }`}
+      className={`fixed left-0 right-0 z-50 transition-all duration-300 ${isSolidNav ? "bg-white shadow-lg" : "bg-transparent"
+        }`}
       style={{ top: `${TICKER_H}px` }}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -52,25 +51,23 @@ export default function Navbar() {
             onClick={() => window.scrollTo(0, 0)}
             className="flex items-center gap-3 flex-shrink-0"
           >
-            <img 
-              src={logo} 
-              alt="St. Kanakadasa Logo" 
-              className="w-10 h-10 md:w-12 md:h-12 object-contain"
+            <img
+              src={logo}
+              alt="St. Kanakadasa Logo"
+              className="w-14 h-14 md:w-20 md:h-20 object-contain"
             />
             <div className="hidden sm:block text-left">
               <p
-                className={`font-heading font-bold text-sm md:text-base leading-tight transition-colors duration-300 ${
-                  isSolidNav ? "text-[#1A237E]" : "text-white"
-                }`}
+                className={`font-heading font-bold text-sm md:text-base leading-tight transition-colors duration-300 ${isSolidNav ? "text-[#1A237E]" : "text-white"
+                  }`}
               >
                 St. Kanakadasa
               </p>
               <p
-                className={`text-xs font-medium tracking-wide transition-colors duration-300 ${
-                  isSolidNav ? "text-gray-500" : "text-white/80"
-                }`}
+                className={`text-xs font-medium tracking-wide transition-colors duration-300 ${isSolidNav ? "text-gray-500" : "text-white/80"
+                  }`}
               >
-                Educational Institutions
+                Matriculation Hr.Sec.School
               </p>
             </div>
           </Link>
@@ -86,15 +83,14 @@ export default function Navbar() {
                   onClick={(e) => {
                     if (link.href !== "/") e.preventDefault();
                   }}
-                  className={`px-3 py-2 text-sm font-medium rounded relative group transition-colors duration-200 ${
-                    isSolidNav
+                  className={`px-3 py-2 text-sm font-medium rounded relative group transition-colors duration-200 ${isSolidNav
                       ? isActive
                         ? "text-[#1A237E] font-bold"
                         : "text-gray-700 hover:text-[#1A237E]"
                       : isActive
                         ? "text-white font-bold"
                         : "text-white/80 hover:text-white"
-                  }`}
+                    }`}
                 >
                   {link.label}
                   {link.href !== "/" && (
@@ -114,9 +110,8 @@ export default function Navbar() {
           {/* Hamburger only */}
           <button
             onClick={() => setMenuOpen(!menuOpen)}
-            className={`xl:hidden p-2 rounded-lg transition-colors duration-200 ${
-              isSolidNav ? "text-[#1A237E] hover:bg-blue-50" : "text-white hover:bg-white/20"
-            }`}
+            className={`xl:hidden p-2 rounded-lg transition-colors duration-200 ${isSolidNav ? "text-[#1A237E] hover:bg-blue-50" : "text-white hover:bg-white/20"
+              }`}
             aria-label="Toggle menu"
           >
             {menuOpen ? <X size={22} /> : <Menu size={22} />}
@@ -134,9 +129,8 @@ export default function Navbar() {
 
       {/* Mobile drawer */}
       <div
-        className={`xl:hidden fixed right-0 h-screen w-[65%] sm:w-[50%] bg-white shadow-2xl z-50 transform transition-transform duration-300 ease-in-out flex flex-col ${
-          menuOpen ? "translate-x-0" : "translate-x-full"
-        }`}
+        className={`xl:hidden fixed right-0 h-screen w-[65%] sm:w-[50%] bg-white shadow-2xl z-50 transform transition-transform duration-300 ease-in-out flex flex-col ${menuOpen ? "translate-x-0" : "translate-x-full"
+          }`}
         style={{ top: `${TICKER_H}px` }}
       >
         <div className="flex items-center justify-between p-4 border-b border-gray-100">
@@ -163,11 +157,10 @@ export default function Navbar() {
                     setMenuOpen(false);
                   }
                 }}
-                className={`w-full text-left px-4 py-3 text-sm font-medium rounded-lg flex items-center gap-2 transition-colors duration-200 ${
-                  isActive
+                className={`w-full text-left px-4 py-3 text-sm font-medium rounded-lg flex items-center gap-2 transition-colors duration-200 ${isActive
                     ? "bg-[#1A237E]/10 text-[#1A237E] font-bold border-l-4 border-[#FF6F00]"
                     : "text-gray-700 hover:bg-gray-50 hover:text-[#1A237E]"
-                }`}
+                  }`}
               >
                 <span
                   className="w-1.5 h-1.5 rounded-full shrink-0"

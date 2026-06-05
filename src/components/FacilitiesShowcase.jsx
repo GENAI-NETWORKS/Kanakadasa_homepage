@@ -2,11 +2,11 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronRight } from "lucide-react";
 
-import imgClass  from "../assets/20.jpeg";
+import imgClass  from "../assets/image.png";
 import imgLab    from "../assets/WhatsApp Image 2026-05-26 at 7.25.45 AM (1).jpeg";
 import imgSport  from "../assets/21.jpeg";
 import imgCultu  from "../assets/31.jpeg";
-import imgLib    from "../assets/19.jpeg";
+import imgLib    from "../assets/image copy.png";
 import imgComp   from "../assets/WhatsApp Image 2026-05-26 at 7.25.47 AM.jpeg";
 import imgBus    from "../assets/WhatsApp Image 2026-05-26 at 7.25.43 AM (2).jpeg";
 import imgEvent  from "../assets/24.jpeg";
@@ -35,7 +35,7 @@ export default function FacilitiesShowcase() {
   }, [isHovered]);
 
   return (
-    <section id="facility" className="relative py-24 overflow-hidden bg-white">
+    <section id="facility" className="relative py-14 overflow-hidden bg-white">
       {/* wavy top decoration */}
       <div className="absolute top-0 left-0 right-0 overflow-hidden leading-0">
         <svg viewBox="0 0 1440 40" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" className="w-full h-10">
@@ -60,18 +60,28 @@ export default function FacilitiesShowcase() {
           onMouseLeave={() => setIsHovered(false)}
         >
           
+          {/* Preload all images for crisp instant switching */}
+          <div className="hidden" aria-hidden="true">
+            {facilities.map((f, i) => (
+              <img key={i} src={f.img} alt="" loading="eager" decoding="sync" />
+            ))}
+          </div>
+
           {/* Main Showcase Display (Left) */}
           <div className="w-full lg:w-3/5 relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white aspect-[4/3] lg:aspect-[16/10] bg-gray-100">
             <AnimatePresence mode="wait">
               <motion.img
                 key={active}
-                initial={{ opacity: 0, scale: 1.05, filter: "blur(5px)" }}
-                animate={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
-                exit={{ opacity: 0, scale: 0.95, filter: "blur(5px)" }}
-                transition={{ duration: 0.4, ease: "easeInOut" }}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.35, ease: "easeInOut" }}
                 src={facilities[active].img}
                 alt={facilities[active].name}
-                className="absolute inset-0 w-full h-full object-cover"
+                loading="eager"
+                decoding="sync"
+                className="absolute inset-0 w-full h-full object-cover object-center"
+                style={{ imageRendering: "auto", willChange: "opacity" }}
               />
             </AnimatePresence>
             

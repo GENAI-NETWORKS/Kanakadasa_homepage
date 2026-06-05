@@ -44,7 +44,7 @@ const features = [
 
 export default function WhyChooseUs() {
   return (
-    <section className="relative py-24 bg-[#FFF8F0]">
+    <section className="relative py-14 bg-[#FFF8F0]">
       {/* Rainbow top bar */}
       <div className="absolute top-0 left-0 right-0 h-1.5 flex">
         {["#FF6F00","#F9A825","#C62828","#1A237E","#1B5E20"].map((c, i) => (

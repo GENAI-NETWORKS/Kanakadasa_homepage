@@ -13,7 +13,7 @@ export default function AcademicsPage() {
   return (
     <>
       <Helmet>
-        <title>Academics | St. Kanakadasa Educational Institutions</title>
+        <title>Academics | St. Kanakadasa Matriculation Hr.Sec.School</title>
         <meta name="description" content="Explore our qualitative attributes, student development programs, and examination system." />
       </Helmet>
 
@@ -29,7 +29,7 @@ export default function AcademicsPage() {
           <h2 className="section-heading mb-6">Academic Overview</h2>
           <div className="w-16 h-1 bg-accent mx-auto mb-8 rounded-full" />
           <p className="text-textmuted leading-relaxed text-lg text-center">
-            ST. Kanakadasa Educational Institutions follows a progressive academic system that combines traditional values with modern educational practices. The institution provides a well-structured curriculum supported by experienced faculty members, smart classrooms, practical learning methodologies, and continuous academic guidance. The academic environment is designed to nurture intellectual growth, creativity, confidence, communication skills, and leadership qualities among students.
+            St. Kanakadasa Matriculation Hr.Sec.School follows a progressive academic system that combines traditional values with modern educational practices. The institution provides a well-structured curriculum supported by experienced faculty members, smart classrooms, practical learning methodologies, and continuous academic guidance. The academic environment is designed to nurture intellectual growth, creativity, confidence, communication skills, and leadership qualities among students.
           </p>
         </div>
       </section>

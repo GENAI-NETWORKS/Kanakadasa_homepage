@@ -107,7 +107,7 @@ export default function CurriculumPage() {
   return (
     <>
       <Helmet>
-        <title>Curriculum & Co-Curriculars | St. Kanakadasa Educational Institutions</title>
+        <title>Curriculum & Co-Curriculars | St. Kanakadasa Matriculation Hr.Sec.School</title>
         <meta name="description" content="Explore our structured curriculum from Pre-KG to Higher Secondary and our wide range of clubs and co-curricular activities." />
       </Helmet>
 
