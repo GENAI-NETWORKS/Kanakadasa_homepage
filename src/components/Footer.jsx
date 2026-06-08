@@ -46,10 +46,10 @@ export default function Footer() {
                 className="w-20 h-20 object-contain bg-white rounded-full p-0.5"
               />
               <div>
-                <p className="font-heading font-bold text-white text-lg leading-tight">
+                <p className="font-heading font-bold text-white text-xl leading-tight">
                   St. Kanakadasa
                 </p>
-                <p className="text-xs font-medium text-white/70 tracking-wide">
+                <p className="text-sm font-bold text-white/70 tracking-wide">
                   Matriculation Hr.Sec.School
                 </p>
               </div>

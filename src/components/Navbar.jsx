@@ -58,13 +58,13 @@ export default function Navbar() {
             />
             <div className="hidden sm:block text-left">
               <p
-                className={`font-heading font-bold text-sm md:text-base leading-tight transition-colors duration-300 ${isSolidNav ? "text-[#1A237E]" : "text-white"
+                className={`font-heading font-bold text-base md:text-lg leading-tight transition-colors duration-300 ${isSolidNav ? "text-[#1A237E]" : "text-white"
                   }`}
               >
                 St. Kanakadasa
               </p>
               <p
-                className={`text-xs font-medium tracking-wide transition-colors duration-300 ${isSolidNav ? "text-gray-500" : "text-white/80"
+                className={`text-sm font-bold tracking-wide transition-colors duration-300 ${isSolidNav ? "text-gray-500" : "text-white/80"
                   }`}
               >
                 Matriculation Hr.Sec.School
