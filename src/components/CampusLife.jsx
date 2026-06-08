@@ -7,6 +7,12 @@ import img5 from "../assets/18.jpeg";
 import img6 from "../assets/26.jpeg";
 import img7 from "../assets/31.jpeg";
 import img8 from "../assets/13.jpeg";
+import sdImg1 from "../assets/7.jpeg";
+import sdImg2 from "../assets/45.jpeg";
+import sdImg3 from "../assets/41.jpeg";
+import sdImg4 from "../assets/23.jpeg";
+import sdImg5 from "../assets/36.jpeg";
+import sdImg6 from "../assets/35.jpeg";
 
 const photos = [
   { src: img1, caption: "Morning Assembly", color: "#1A237E" },
@@ -17,6 +23,12 @@ const photos = [
   { src: img6, caption: "Leadership Day",   color: "#00695C" },
   { src: img7, caption: "Cultural Night",   color: "#C62828" },
   { src: img8, caption: "School Day",       color: "#0277BD" },
+  { src: sdImg1, caption: "Classical Dance", color: "#C62828" },
+  { src: sdImg2, caption: "Cultural Night", color: "#6A1B9A" },
+  { src: sdImg3, caption: "Creative Arts", color: "#FF6F00" },
+  { src: sdImg4, caption: "Teamwork & Sports", color: "#1A237E" },
+  { src: sdImg5, caption: "Competitions", color: "#00695C" },
+  { src: sdImg6, caption: "Celebrations", color: "#F9A825" },
 ];
 
 // Duplicate the array to create a seamless infinite loop
@@ -58,8 +70,8 @@ export default function CampusLife() {
 
           {/* Scrolling Track */}
           <motion.div
-            className="flex gap-6 pl-6"
-            animate={{ x: [0, -1035 * 2] }} // Approximate width to scroll. Adjust based on content width.
+            className="flex gap-6 pl-6 w-max"
+            animate={{ x: ["0%", "-50%"] }} // Scroll exactly half of the total combined width
             transition={{
               x: {
                 repeat: Infinity,

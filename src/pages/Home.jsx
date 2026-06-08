@@ -8,7 +8,6 @@ import AcademicPrograms  from '../components/AcademicPrograms'
 import VisionMission     from '../components/VisionMission'
 import WhyChooseUs       from '../components/WhyChooseUs'
 import FacilitiesShowcase from '../components/FacilitiesShowcase'
-import StudentDevelopment from '../components/StudentDevelopment'
 import CampusLife        from '../components/CampusLife'
 import AdmissionsCTA     from '../components/AdmissionsCTA'
 
@@ -62,9 +61,6 @@ export default function Home() {
 
       {/* 1.5 Why Choose Us */}
       <WhyChooseUs />
-
-      {/* 1.8 Student Development Programs */}
-      <StudentDevelopment />
 
       {/* 1.9 Campus Life */}
       <CampusLife />
